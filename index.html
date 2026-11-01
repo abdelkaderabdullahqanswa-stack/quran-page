@@ -2,16 +2,19 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-3e5wDaW8L4yphvbvDTpgzKW3jpQ1xnmbWfUA9Kul9C4=' 'sha256-PcM/gm5VIXO0+r5cBQW3163UbFWrnpj83mKkFzIOjk4=' https://cdn.jsdelivr.net https://unpkg.com 'unsafe-eval'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#2D5A4A">
-<title>برنامج لتعليم القرآن الكريم وتجويده</title>
+<title>الأستاذ عبدالقادر عبدالله</title>
 
+<meta name="referrer" content="no-referrer">
+<meta name="format-detection" content="telephone=no">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js" defer></script>
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap">
+<script>if(window.top!==window.self){document.documentElement.style.display='none'}</script>
 
 <style>
 @layer reset,tokens,base,components,forms,dash,feedback,motion;
@@ -37,7 +40,8 @@ a{color:inherit;text-decoration:none}
   --success:#2D7A4F; --danger:#A83232; --warning:#B67A00;
   --focus:#2D5A4A;
   --font-body:'Cairo',system-ui,sans-serif;
-  --font-display:'Tajawal','Cairo',sans-serif;
+  --font-display:'Cairo',system-ui,sans-serif;
+  --font-heading:'Amiri','Cairo',serif;
   --r-sm:8px; --r-md:12px; --r-lg:20px; --r-xl:28px; --r-2xl:36px; --r-full:9999px;
   --sh-sm:0 1px 2px rgba(30,61,49,.06);
   --sh-md:0 6px 16px rgba(30,61,49,.08);
@@ -61,7 +65,7 @@ html[data-theme="dark"]{
 
 @layer base{
 body{font-family:var(--font-body);font-size:16px;color:var(--fg);background:var(--bg);transition:background .3s ease,color .3s ease}
-h1,h2,h3,h4,h5,h6{font-family:var(--font-display);font-weight:800;color:var(--p700);line-height:1.25;letter-spacing:-.01em}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;color:var(--p700);line-height:1.4;letter-spacing:0}
 h1{font-size:clamp(1.9rem,4.5vw,3rem)}
 h2{font-size:clamp(1.5rem,3.2vw,2.25rem)}
 h3{font-size:clamp(1.15rem,2.2vw,1.5rem)}
@@ -256,6 +260,41 @@ html[data-theme="dark"] .data-table th{color:var(--fg)}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .animate-in{animation:fadeInUp .6s ease forwards}
 }
+
+/* ===== خيارات الإرسال + قائمة الثلاث نقاط ===== */
+.form-hint{font-size:.85rem;color:var(--fg-muted);margin-top:.4rem;line-height:1.8}
+input.form-input[readonly]{background:var(--bg-subtle);cursor:default;font-weight:700;color:var(--p700)}
+.status-box:not(:empty){padding:.75rem 1rem;border:2px solid var(--p500);border-radius:var(--r-md);background:var(--bg-subtle);color:var(--fg);font-size:.9rem;line-height:1.9;text-align:right}
+
+/* ===== تفاعل احترافي هادئ ===== */
+html{-webkit-tap-highlight-color:transparent}
+::selection{background:var(--p100);color:var(--p900)}
+input,select,textarea{accent-color:var(--p700);caret-color:var(--p700)}
+.form-input{transition:border-color .2s ease,box-shadow .2s ease,background-color .2s ease}
+.form-input:focus{border-color:var(--p500);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--p500) 20%,transparent)}
+.form-input.is-invalid:focus{border-color:var(--danger);box-shadow:0 0 0 3px color-mix(in srgb,var(--danger) 18%,transparent)}
+.form-input[readonly]:focus{border-color:var(--border);box-shadow:none}
+.form-input:-webkit-autofill,.form-input:-webkit-autofill:hover{-webkit-text-fill-color:var(--fg);box-shadow:0 0 0 1000px var(--bg) inset;transition:background-color 9999s ease-out 0s}
+.form-input:-webkit-autofill:focus{-webkit-text-fill-color:var(--fg);box-shadow:0 0 0 1000px var(--bg) inset,0 0 0 3px color-mix(in srgb,var(--p500) 20%,transparent)}
+input[readonly].form-input{background:var(--bg-subtle);cursor:default;font-weight:700;color:var(--p700)}
+.form-hint{font-size:.85rem;color:var(--fg-muted);margin-top:.4rem;line-height:1.8}
+.status-box:not(:empty){padding:.75rem 1rem;border:1px solid var(--p300);border-inline-start:4px solid var(--p500);border-radius:var(--r-md);background:var(--bg-subtle);color:var(--fg);font-size:.9rem;line-height:1.9;text-align:right;animation:fadeInUp .35s ease both}
+.fab:hover{transform:scale(1.06)}
+.fab:active{transform:scale(.97)}
+.fab__tip{position:absolute;left:calc(100% + .7rem);top:50%;transform:translateY(-50%);background:var(--bg-surface);color:var(--p700);border:1px solid var(--border-strong);border-radius:var(--r-full);padding:.4rem .9rem;font-size:.85rem;font-weight:700;white-space:nowrap;box-shadow:var(--sh-md);opacity:0;pointer-events:none;transition:opacity .2s ease}
+.fab:hover .fab__tip,.fab:focus-visible .fab__tip{opacity:1}
+.hero__inner{animation:fadeInUp .6s ease both}
+.btn{transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,border-color .2s ease}
+.btn:hover:not(:disabled){transform:translateY(-1px)}
+.btn:active:not(:disabled){transform:translateY(0)}
+.skill{transition:background-color .2s ease,box-shadow .2s ease}
+.skill:hover{background:var(--p100);box-shadow:var(--sh-sm)}
+.scroll-bar{position:fixed;top:0;inset-inline:0;height:3px;z-index:1200;pointer-events:none}
+.scroll-bar>i{display:block;height:100%;width:0;background:var(--p500);margin-inline-start:auto;transition:width .1s linear}
+.js-motion .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.js-motion .reveal.in{opacity:1;transform:none}
+.js-motion .feature.reveal.in{transition:transform .2s ease,box-shadow .2s ease,opacity .5s ease}
+@media(prefers-reduced-motion:reduce){.js-motion .reveal{opacity:1;transform:none}.fab,.hero__inner{animation:none!important}}
 </style>
 </head>
 <body>
@@ -270,10 +309,10 @@ html[data-theme="dark"] .data-table th{color:var(--fg)}
     <div class="container hero__inner">
       <span class="hero__badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        برنامج تعليمي متكامل
+        برنامج أونلاين متكامل
       </span>
-      <h1>برنامج لتعليم القرآن الكريم وتجويده</h1>
-      <p>رحلة إيمانية متكاملة لحفظ كتاب الله تعالى وإتقان تلاوته، مع متابعة مستمرة وتقارير دورية لأولياء الأمور، وأسلوب تعليمي مبسط وميسّر يناسب كل المستويات.</p>
+      <h1>برنامج إتقان لتحفيظ القرآن الكريم وتجويده أونلاين</h1>
+      <p>رحلة إيمانية متكاملة لحفظ كتاب الله تعالى وإتقان تلاوته، عبر حصص مباشرة أونلاين من بيتك، مع متابعة مستمرة وتقارير دورية لأولياء الأمور، وأسلوب مبسط يناسب كل المستويات.</p>
       <div class="hero__actions">
         <a href="#register" class="btn btn--light">🎯 احجز حصتك المجانية</a>
         <a href="#teacher" class="btn btn--outline-light">تعرّف على المعلم</a>
@@ -282,6 +321,29 @@ html[data-theme="dark"] .data-table th{color:var(--fg)}
         <div class="hero__stat"><div class="hero__stat-value">100%</div><div class="hero__stat-label">متابعة شخصية</div></div>
         <div class="hero__stat"><div class="hero__stat-value">3</div><div class="hero__stat-label">تقارير دورية</div></div>
         <div class="hero__stat"><div class="hero__stat-value">∞</div><div class="hero__stat-label">اهتمام بالماضي</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="how-it-works">
+    <div class="container">
+      <div class="section__header">
+        <h2>كيف تبدأ؟</h2>
+        <p>الحفظ والتجويد والمتابعة كلها أونلاين، من أي مكان وفي الوقت المناسب لك.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="feature">
+          <div class="feature__icon">🎯</div>
+          <div><div class="feature__title">١. احجز حصة مجانية</div><div class="feature__desc">املأ نموذج الحجز بخطوات بسيطة، وسيتواصل معك المعلم.</div></div>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">💻</div>
+          <div><div class="feature__title">٢. جرّب الحصة أونلاين</div><div class="feature__desc">حصة مباشرة عبر الإنترنت من بيتك، بلا سفر ولا مواصلات.</div></div>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">✅</div>
+          <div><div class="feature__title">٣. أكمل مع المعلم</div><div class="feature__desc">إن ناسبتك الحصة تكمل معنا، والحفظ والمتابعة كلها أونلاين.</div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -349,7 +411,7 @@ html[data-theme="dark"] .data-table th{color:var(--fg)}
     <div class="container">
       <div class="section__header">
         <h2>احجز حصتك المجانية</h2>
-        <p>املأ البيانات التالية وسنتواصل معك في أقرب وقت لتحديد موعد الحصة التجريبية.</p>
+        <p>املأ البيانات التالية وسنتواصل معك في أقرب وقت لتحديد موعد الحصة التجريبية أونلاين.</p>
       </div>
       <form id="regForm" class="form-wrap" novalidate>
         <fieldset class="form-fieldset">
@@ -370,6 +432,11 @@ html[data-theme="dark"] .data-table th{color:var(--fg)}
               <input type="tel" id="regPhone" class="form-input" required autocomplete="tel" placeholder="01012345678">
               <div class="form-error" id="errPhone"></div>
             </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="regGuardianPhone">رقم ولي الأمر <span class="req">*</span></label>
+            <input type="tel" id="regGuardianPhone" class="form-input" required autocomplete="tel" placeholder="01012345678">
+            <div class="form-error" id="errGuardianPhone"></div>
           </div>
           <div class="form-group">
             <span class="form-label">النوع</span>
@@ -409,8 +476,14 @@ html[data-theme="dark"] .data-table th{color:var(--fg)}
         </fieldset>
 
         <fieldset class="form-fieldset">
-          <legend class="form-legend"><span class="form-legend__num">3</span> الأيام التي تناسبك</legend>
-          <p style="font-size:.9rem;color:var(--fg-muted);margin-bottom:1rem;">اختر يومًا واحدًا أو أكثر</p>
+          <legend class="form-legend"><span class="form-legend__num">3</span> تاريخ الحجز والأيام المناسبة</legend>
+          <div class="form-group">
+            <label class="form-label" for="regDate">تاريخ حجز الحصة المجانية</label>
+            <input type="text" id="regDate" class="form-input" readonly required aria-describedby="regDateHint">
+            <p class="form-hint" id="regDateHint">هذا هو تاريخ اليوم، أي اليوم الذي تحجز فيه الحصة الآن من خلال الموقع. يُكتب تلقائيًا ولا تحتاج لتغييره.</p>
+            <div class="form-error" id="errDate"></div>
+          </div>
+          <p style="font-size:.9rem;color:var(--fg-muted);margin-bottom:1rem;">الأيام التي تناسبك: اختر يومًا واحدًا أو أكثر</p>
           <div class="form-group">
             <div class="days-grid" id="daysGrid">
               <label class="form-option"><input type="checkbox" name="days" value="السبت"><span>السبت</span></label>
@@ -426,8 +499,12 @@ html[data-theme="dark"] .data-table th{color:var(--fg)}
         </fieldset>
 
         <div class="form-actions">
-          <button type="submit" class="btn btn--wa">📱 إرسال عبر واتساب</button>
-          <button type="button" class="btn btn--secondary" id="btnWord">📄 تحميل ملف Word</button>
+          <button type="submit" class="btn btn--wa">📱 إرسال التفاصيل على واتساب</button>
+          <button type="button" class="btn btn--primary" data-act="word">📄 تحميل ملف Word على الجهاز</button>
+        </div>
+        <p id="regActionStatus" class="form-hint status-box" role="status" aria-live="polite" style="margin-top:1rem;"></p>
+        <div style="margin-top:.5rem;text-align:center;">
+          <button type="button" class="btn btn--outline btn--sm" id="btnPreviewReg">👁️ معاينة البيانات قبل الإرسال</button>
         </div>
       </form>
     </div>
@@ -435,7 +512,7 @@ html[data-theme="dark"] .data-table th{color:var(--fg)}
 
   <footer class="footer">
     <div class="container">
-      <h3 style="color:#fff;margin-bottom:.5rem;font-size:1.1rem;">برنامج لتعليم القرآن الكريم وتجويده</h3>
+      <h3 style="color:#fff;margin-bottom:.5rem;font-size:1.1rem;">برنامج إتقان لتحفيظ القرآن الكريم وتجويده أونلاين</h3>
       <p style="color:rgba(255,255,255,.7);font-size:.9rem;">مع الأستاذ عبدالقادر عبدالله</p>
       <div class="footer__secret">
         <button id="secretLink" aria-label="دخول لوحة التحكم">🔒 متابعة مستوى المتعلمين</button>
@@ -465,7 +542,7 @@ html[data-theme="dark"] .data-table th{color:var(--fg)}
   </div>
 </div>
 
-<a href="https://wa.me/201501909429" class="fab" target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر واتساب">
+<a href="https://wa.me/201501909429?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D9%88%D8%B1%D8%AD%D9%85%D8%A9%20%D8%A7%D9%84%D9%84%D9%87%20%D9%88%D8%A8%D8%B1%D9%83%D8%A7%D8%AA%D9%87%D8%8C%0A%D8%A3%D8%B3%D8%AA%D8%A7%D8%B0%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%82%D8%A7%D8%AF%D8%B1%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%20%D8%AA%D8%B9%D9%84%D9%8A%D9%85%20%D8%A7%D9%84%D9%82%D8%B1%D8%A2%D9%86%20%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D9%85%20%D9%88%D8%A7%D9%84%D8%AD%D8%B5%D8%A9%20%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A9.%0A%D8%B4%D9%83%D8%B1%D9%8B%D8%A7%20%D9%84%D8%AD%D8%B6%D8%B1%D8%AA%D9%83%D9%85.%0A%D8%A7%D9%84%D8%A7%D8%B3%D9%85%3A%20" class="fab" target="_blank" rel="noopener noreferrer" aria-label="تواصل مع المعلم عبر واتساب" title="تواصل مع المعلم عبر واتساب"><span class="fab__tip" aria-hidden="true">تواصل مع المعلم 👋</span>
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
@@ -475,8 +552,6 @@ html[data-theme="dark"] .data-table th{color:var(--fg)}
 
 /* ===================== Constants ===================== */
 const TEACHER_PHONE = '201501909429';
-const _SECRET_CODES = [49,65,122,120,99,118,79,79];
-const getSecretCode = () => String.fromCharCode(..._SECRET_CODES);
 
 /* ===================== DOM helpers ===================== */
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -559,6 +634,13 @@ const Validator = {
     if (/^01[0125]\d{8}$/.test(c)) return null;
     if (c.startsWith('01')) return 'الرقم يبدأ بـ 010 / 011 / 012 / 015';
     return 'رقم غير صحيح';
+  },
+  guardianPhone(v) {
+    if (!v.trim()) return 'أدخل رقم ولي الأمر';
+    return Validator.phone(v);
+  },
+  date(v) {
+    return v ? null : 'تعذر تحديد تاريخ اليوم، أعد تحميل الصفحة';
   }
 };
 
@@ -582,6 +664,8 @@ const PublicForm = {
     const v1 = applyValidation($('#regName'), $('#errName'), Validator.name);
     const v2 = applyValidation($('#regAge'), $('#errAge'), Validator.age);
     const v3 = applyValidation($('#regPhone'), $('#errPhone'), Validator.phone);
+    const v6 = applyValidation($('#regGuardianPhone'), $('#errGuardianPhone'), Validator.guardianPhone);
+    const v7 = applyValidation($('#regDate'), $('#errDate'), Validator.date);
     const juz = $('#regJuz');
     let v4 = true;
     const errJuz = $('#errJuz');
@@ -604,7 +688,7 @@ const PublicForm = {
     } else {
       errDays.classList.remove('visible');
     }
-    return v1 && v2 && v3 && v4 && v5;
+    return v1 && v2 && v3 && v4 && v5 && v6 && v7;
   },
   getData() {
     const gender = $('input[name="gender"]:checked');
@@ -614,6 +698,8 @@ const PublicForm = {
       name: $('#regName').value.trim(),
       age: $('#regAge').value.trim(),
       phone: $('#regPhone').value.trim(),
+      guardianPhone: $('#regGuardianPhone').value.trim(),
+      date: toISO(new Date()),
       gender: gender ? gender.value : '—',
       juz: $('#regJuz').value,
       level: level ? level.value : '—',
@@ -627,52 +713,68 @@ let DB = { students: [], lessons: [] };
 let _keyCache = null;
 let currentStudentId = null;
 let previewDraft = null;
+let previewDirty = false;
 
 /* ===================== Data Manager ===================== */
+const b64e = (u8) => { let s = ''; for (let i = 0; i < u8.length; i++) s += String.fromCharCode(u8[i]); return btoa(s); };
+const b64d = (s) => { const b = atob(s); const u = new Uint8Array(b.length); for (let i = 0; i < b.length; i++) u[i] = b.charCodeAt(i); return u; };
+const ctEq = (a, b) => { if (a.length !== b.length) return false; let r = 0; for (let i = 0; i < a.length; i++) r |= a[i] ^ b[i]; return r === 0; };
+const DB_KEY = 'quran_db_v2';
 const DataManager = {
-  async getKey() {
-    if (_keyCache) return _keyCache;
-    const seed = 'quran-hifz-key-v1|' + (navigator.userAgent || '').slice(0, 50);
-    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(seed));
-    _keyCache = buf;
-    return _keyCache;
+  _key: null,
+  async setKeyBytes(bytes) {
+    this._key = await crypto.subtle.importKey('raw', bytes, { name: 'AES-GCM' }, false, ['encrypt', 'decrypt']);
   },
-  async encrypt(text) {
-    const key = await this.getKey();
-    const cryptoKey = await crypto.subtle.importKey('raw', key, { name: 'AES-GCM' }, false, ['encrypt']);
+  clearKey() { this._key = null; },
+  async encryptWith(key, text) {
     const iv = crypto.getRandomValues(new Uint8Array(12));
-    const enc = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, cryptoKey, new TextEncoder().encode(text));
+    const enc = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, new TextEncoder().encode(text));
     const out = new Uint8Array(iv.length + enc.byteLength);
     out.set(iv, 0); out.set(new Uint8Array(enc), iv.length);
-    let bin = '';
-    for (let i = 0; i < out.length; i++) bin += String.fromCharCode(out[i]);
-    return btoa(bin);
+    return 'v2:' + b64e(out);
   },
-  async decrypt(b64) {
-    const key = await this.getKey();
-    const cryptoKey = await crypto.subtle.importKey('raw', key, { name: 'AES-GCM' }, false, ['decrypt']);
-    const bin = atob(b64);
-    const bytes = new Uint8Array(bin.length);
-    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
-    const iv = bytes.slice(0, 12);
-    const data = bytes.slice(12);
-    const dec = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, cryptoKey, data);
+  async decryptWith(key, str) {
+    const bytes = b64d(str.replace(/^v2:/, ''));
+    const dec = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: bytes.slice(0, 12) }, key, bytes.slice(12));
+    return new TextDecoder().decode(dec);
+  },
+  /* فك تشفير النسخة القديمة (قبل التأمين) للترحيل فقط */
+  async legacyDecrypt(b64) {
+    const seed = 'quran-hifz-key-v1|' + (navigator.userAgent || '').slice(0, 50);
+    const raw = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(seed));
+    const k = await crypto.subtle.importKey('raw', raw, { name: 'AES-GCM' }, false, ['decrypt']);
+    const bytes = b64d(b64);
+    const dec = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: bytes.slice(0, 12) }, k, bytes.slice(12));
     return new TextDecoder().decode(dec);
   },
   async save() {
     try {
-      const enc = await this.encrypt(JSON.stringify(DB));
-      localStorage.setItem('quran_db_v1', enc);
-    } catch (e) { console.warn('save failed', e); }
+      if (!this._key) return;
+      localStorage.setItem(DB_KEY, await this.encryptWith(this._key, JSON.stringify(DB)));
+    } catch (e) { console.warn('save failed', e); showToast('تعذر حفظ البيانات (قد تكون مساحة المتصفح ممتلئة)', 'error'); }
   },
+  _valid(p) { return p && Array.isArray(p.students) && Array.isArray(p.lessons); },
+  /* يرجع false فقط إذا وُجدت بيانات مشفرة ولم يمكن فكها */
   async load() {
-    try {
-      const saved = localStorage.getItem('quran_db_v1');
-      if (!saved) return;
-      const dec = await this.decrypt(saved);
-      const parsed = JSON.parse(dec);
-      if (parsed && Array.isArray(parsed.students) && Array.isArray(parsed.lessons)) DB = parsed;
-    } catch (e) { DB = { students: [], lessons: [] }; }
+    let saved = null;
+    try { saved = localStorage.getItem(DB_KEY); } catch {}
+    if (saved) {
+      try {
+        const p = JSON.parse(await this.decryptWith(this._key, saved));
+        if (!this._valid(p)) return false;
+        DB = p; return true;
+      } catch { return false; }
+    }
+    let legacy = null;
+    try { legacy = localStorage.getItem('quran_db_v1'); } catch {}
+    DB = { students: [], lessons: [] };
+    if (legacy) {
+      try {
+        const p = JSON.parse(await this.legacyDecrypt(legacy));
+        if (this._valid(p)) { DB = p; await this.save(); try { localStorage.removeItem('quran_db_v1'); } catch {} }
+      } catch {}
+    }
+    return true;
   }
 };
 
@@ -705,16 +807,38 @@ const daysBetween = (a, b) => {
   return Math.floor((d2 - d1) / (1000 * 60 * 60 * 24));
 };
 
+/* ===================== Lazy library loader (مع مصدر احتياطي) ===================== */
+const _libP = {};
+const loadLib = (name, urls, getter) => {
+  if (getter()) return Promise.resolve(getter());
+  if (_libP[name]) return _libP[name];
+  _libP[name] = new Promise((resolve, reject) => {
+    let i = 0;
+    const next = () => {
+      if (i >= urls.length) { _libP[name] = null; reject(new Error('تعذر تحميل المكتبة، تأكد من الاتصال بالإنترنت')); return; }
+      const s = document.createElement('script');
+      let done = false;
+      const fail = () => { if (done) return; done = true; s.remove(); next(); };
+      s.src = urls[i++]; s.async = true; s.crossOrigin = 'anonymous';
+      s.onload = () => { if (done) return; done = true; getter() ? resolve(getter()) : next(); };
+      s.onerror = fail;
+      setTimeout(fail, 20000);
+      document.head.appendChild(s);
+    };
+    next();
+  });
+  return _libP[name];
+};
+const loadDocxLib = () => loadLib('docx', [
+  'https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js',
+  'https://unpkg.com/docx@8.5.0/build/index.umd.js'], () => window.docx);
+const loadExcelLib = () => loadLib('exceljs', [
+  'https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js',
+  'https://unpkg.com/exceljs@4.4.0/dist/exceljs.min.js'], () => window.ExcelJS);
+
 /* ===================== DocxEngine ===================== */
 const DocxEngine = {
-  async load() {
-    if (typeof docx !== 'undefined') return docx;
-    for (let i = 0; i < 100; i++) {
-      await new Promise(r => setTimeout(r, 100));
-      if (typeof docx !== 'undefined') return docx;
-    }
-    throw new Error('تعذر تحميل مكتبة Word');
-  },
+  async load() { return loadDocxLib(); },
   run(text, opts = {}) {
     return new docx.TextRun(Object.assign({
       text: String(text ?? '—'), font: 'Arial', size: 24, rightToLeft: true,
@@ -724,61 +848,82 @@ const DocxEngine = {
   line(label, value) {
     const { Paragraph, AlignmentType } = docx;
     return new Paragraph({
-      bidirectional: true, alignment: AlignmentType.RIGHT, spacing: { before: 80, after: 80 },
+      bidirectional: true, spacing: { before: 80, after: 80 },
       children: [this.run(label + ' ', { bold: true, color: '2D5A4A' }), this.run(value || '—')]
     });
   },
   sectionTitle(text) {
     const { Paragraph, AlignmentType } = docx;
     return new Paragraph({
-      bidirectional: true, alignment: AlignmentType.RIGHT, spacing: { before: 300, after: 160 },
+      bidirectional: true, spacing: { before: 300, after: 160 },
       shading: { fill: '2D5A4A' }, children: [this.run(text, { bold: true, color: 'FFFFFF', size: 26 })]
     });
   },
-  pageProps() { return { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 }, bidi: true }; },
+  pageProps() { return { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } }; },
   docStyles() {
-    return { default: { document: { run: { font: 'Arial', size: 24, rightToLeft: true, language: { value: 'ar-SA' } }, paragraph: { bidirectional: true, alignment: 'right' } } } };
+    return { default: { document: { run: { font: 'Arial', size: 24, rightToLeft: true, language: { value: 'ar-SA' } }, paragraph: { bidirectional: true } } } };
   },
   async save(doc, filename) {
-    const { Packer } = docx;
-    const blob = await Packer.toBlob(doc);
+    const blob = await docx.Packer.toBlob(doc);
+    this.downloadBlob(blob, filename);
+  },
+  downloadBlob(blob, filename) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url; a.download = filename;
     document.body.appendChild(a); a.click(); a.remove();
-    URL.revokeObjectURL(url);
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
   },
-  async generateRegistration(d) {
+  DOCX_MIME: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  async buildRegistration(d) {
     await this.load();
-    const { Document, Paragraph, AlignmentType } = docx;
-    const daysText = d.days.length ? d.days.join('، ') : '—';
-    const doc = new Document({
-      styles: this.docStyles(),
-      sections: [{
-        properties: { page: this.pageProps() },
-        children: [
-          new Paragraph({ bidirectional: true, alignment: AlignmentType.CENTER, spacing: { after: 200 },
-            children: [this.run('طلب حجز حصة مجانية', { bold: true, size: 40, color: '2D5A4A' })] }),
-          new Paragraph({ bidirectional: true, alignment: AlignmentType.CENTER, spacing: { after: 400 },
-            children: [this.run('برنامج لتعليم القرآن الكريم وتجويده — الأستاذ عبدالقادر عبدالله', { size: 22, color: '8E6E3E' })] }),
-          this.sectionTitle('البيانات الأساسية'),
-          this.line('الاسم:', d.name),
-          this.line('السن:', d.age + ' سنة'),
-          this.line('رقم الواتساب:', d.phone),
-          this.line('النوع:', d.gender),
-          this.sectionTitle('مستوى الحفظ'),
-          this.line('عدد الأجزاء المحفوظة:', d.juz),
-          this.line('مستوى القراءة:', d.level),
-          this.sectionTitle('الأيام المفضلة للحضور'),
-          this.line('الأيام:', daysText),
-          new Paragraph({ bidirectional: true, alignment: AlignmentType.CENTER, spacing: { before: 600 },
-            children: [this.run('جزاكم الله خيرًا، وسنتواصل معكم قريبًا بإذن الله.', { size: 22, color: '5C5650', italics: true })] })
-        ]
-      }]
-    });
+    const doc = this.registrationDoc(d);
+    const blob = await docx.Packer.toBlob(doc);
     const safeName = (d.name || 'طالب').replace(/\s+/g, '_');
-    await this.save(doc, `تسجيل_${safeName}.docx`);
-    showToast('تم تحميل ملف Word بنجاح', 'success');
+    return { blob, filename: `تسجيل_${safeName}.docx` };
+  },
+  canShareFile(blob, filename) {
+    try {
+      const f = new File([blob], filename, { type: this.DOCX_MIME });
+      return !!(navigator.canShare && navigator.canShare({ files: [f] }));
+    } catch { return false; }
+  },
+  /* يجب استدعاؤها مباشرة داخل حدث النقر (بدون await قبلها) كي يسمح المتصفح بقائمة المشاركة */
+  async shareFile(blob, filename, text, title) {
+    const file = new File([blob], filename, { type: this.DOCX_MIME });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      try { await navigator.share({ files: [file], title: title || filename, text }); return 'shared'; }
+      catch (e) { return e && e.name === 'AbortError' ? 'cancelled' : 'failed'; }
+    }
+    return 'unsupported';
+  },
+  registrationData(d) {
+    return [
+      { title: 'البيانات الأساسية', rows: [
+        ['الاسم:', d.name], ['السن:', d.age + ' سنة'], ['رقم الواتساب:', d.phone],
+        ['رقم ولي الأمر:', d.guardianPhone], ['النوع:', d.gender] ] },
+      { title: 'مستوى الحفظ', rows: [
+        ['عدد الأجزاء المحفوظة:', d.juz], ['مستوى القراءة:', d.level] ] },
+      { title: 'تاريخ الحجز والأيام المناسبة', rows: [
+        ['تاريخ حجز الحصة المجانية:', d.date ? formatDateAr(d.date) : '—'],
+        ['الأيام المفضلة:', d.days.length ? d.days.join('، ') : '—'] ] }
+    ];
+  },
+  registrationDoc(d) {
+    const { Document, Paragraph, AlignmentType } = docx;
+    const children = [
+      new Paragraph({ bidirectional: true, alignment: AlignmentType.CENTER, spacing: { after: 200 },
+        children: [this.run('طلب حجز حصة مجانية', { bold: true, size: 40, color: '2D5A4A' })] }),
+      new Paragraph({ bidirectional: true, alignment: AlignmentType.CENTER, spacing: { after: 400 },
+        children: [this.run('برنامج إتقان لتحفيظ القرآن الكريم وتجويده أونلاين — الأستاذ عبدالقادر عبدالله', { size: 22, color: '8E6E3E' })] })
+    ];
+    this.registrationData(d).forEach(sec => {
+      children.push(this.sectionTitle(sec.title));
+      sec.rows.forEach(r => children.push(this.line(r[0], r[1])));
+    });
+    children.push(new Paragraph({ bidirectional: true, alignment: AlignmentType.CENTER, spacing: { before: 600 },
+      children: [this.run('جزاكم الله خيرًا، وسنتواصل معكم قريبًا بإذن الله.', { size: 22, color: '5C5650', italics: true })] }));
+    return new Document({ styles: this.docStyles(), sections: [{ properties: { page: this.pageProps() }, children }] });
   }
 };
 
@@ -796,35 +941,138 @@ const App = {
 };
 
 /* ===================== Auth ===================== */
+const AUTH_DEFAULT = {"s": "M6YO3mA89EWqD5tVEDu+pg==", "h": "iXKbac0iMasyPtyiTQ/8ut2ZmZ4B+6V6kTSBtzmYWQI=", "i": 600000};
+const AUTH_STORE = 'quran_auth_v2';
+const AUTH_FAIL = 'quran_auth_fail';
+async function deriveCreds(pw, salt, iter) {
+  const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(String(pw).normalize('NFKC')), 'PBKDF2', false, ['deriveBits']);
+  const bits = new Uint8Array(await crypto.subtle.deriveBits({ name: 'PBKDF2', hash: 'SHA-256', salt, iterations: iter }, base, 512));
+  return { verifier: bits.slice(0, 32), keyBytes: bits.slice(32) };
+}
 const Auth = {
+  IDLE_MS: 10 * 60 * 1000, HIDDEN_MS: 3 * 60 * 1000, _t: null, _hiddenAt: 0, _on: false,
+  creds() {
+    try {
+      const o = JSON.parse(localStorage.getItem(AUTH_STORE));
+      if (o && typeof o.s === 'string' && typeof o.h === 'string' && o.i >= 100000) return o;
+    } catch {}
+    return AUTH_DEFAULT;
+  },
+  failState() { try { return JSON.parse(localStorage.getItem(AUTH_FAIL)) || { n: 0, u: 0 }; } catch { return { n: 0, u: 0 }; } },
   askPassword() { switchView('view-login'); setTimeout(() => $('#loginCode')?.focus(), 120); },
   showPublic() {
     switchView('view-public');
     const c = $('#loginCode'); if (c) c.value = '';
     const e = $('#loginError'); if (e) e.classList.remove('visible');
   },
-  login(code) {
-    if (code.trim() === getSecretCode()) {
+  async login(code) {
+    const err = $('#loginError'), btn = $('#loginForm button[type="submit"]'), input = $('#loginCode');
+    const showErr = (m) => { err.textContent = m; err.classList.add('visible'); };
+    err.classList.remove('visible');
+    const st = this.failState();
+    if (st.u > Date.now()) { showErr('محاولات كثيرة. انتظر ' + Math.ceil((st.u - Date.now()) / 1000) + ' ثانية'); return; }
+    if (!(window.crypto && crypto.subtle)) { showErr('يجب فتح الموقع عبر رابط آمن (HTTPS) وبمتصفح حديث'); return; }
+    if (!code) { showErr('أدخل الكود السري'); return; }
+    const oldLabel = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'جارٍ التحقق…'; }
+    try {
+      const c = this.creds();
+      const { verifier, keyBytes } = await deriveCreds(code, b64d(c.s), c.i);
+      if (!ctEq(verifier, b64d(c.h))) {
+        const n = st.n + 1;
+        const wait = n >= 5 ? Math.min(900, 30 * Math.pow(2, n - 5)) : 0;
+        try { localStorage.setItem(AUTH_FAIL, JSON.stringify({ n, u: wait ? Date.now() + wait * 1000 : 0 })); } catch {}
+        showErr(wait ? 'الكود غير صحيح. تم الإيقاف مؤقتًا ' + wait + ' ثانية' : 'الكود غير صحيح، حاول مرة أخرى');
+        input.value = ''; input.focus();
+        return;
+      }
+      await DataManager.setKeyBytes(keyBytes);
+      if (!(await DataManager.load())) {
+        DataManager.clearKey();
+        showErr('تعذر فك تشفير البيانات المحفوظة. لن يتم تعديلها.');
+        return;
+      }
+      try { localStorage.removeItem(AUTH_FAIL); } catch {}
+      input.value = '';
       showToast('مرحبًا بك في لوحة التحكم', 'success');
       App.Dashboard.open();
-    } else {
-      const e = $('#loginError');
-      e.textContent = 'الكود غير صحيح، حاول مرة أخرى';
-      e.classList.add('visible');
-      $('#loginCode').value = '';
-      $('#loginCode').focus();
+      this.startSession();
+    } catch (e) {
+      showErr('حدث خطأ غير متوقع، حاول مرة أخرى');
+    } finally {
+      if (btn) { btn.disabled = false; btn.textContent = oldLabel; }
     }
+  },
+  async changePassword(oldP, newP) {
+    const c = this.creds();
+    const o = await deriveCreds(oldP, b64d(c.s), c.i);
+    if (!ctEq(o.verifier, b64d(c.h))) throw new Error('الرمز الحالي غير صحيح');
+    const salt = crypto.getRandomValues(new Uint8Array(16));
+    const n = await deriveCreds(newP, salt, 600000);
+    const newKey = await crypto.subtle.importKey('raw', n.keyBytes, { name: 'AES-GCM' }, false, ['encrypt', 'decrypt']);
+    const enc = await DataManager.encryptWith(newKey, JSON.stringify(DB));
+    localStorage.setItem(DB_KEY, enc);
+    localStorage.setItem(AUTH_STORE, JSON.stringify({ s: b64e(salt), h: b64e(n.verifier), i: 600000 }));
+    DataManager._key = newKey;
+  },
+  startSession() {
+    if (this._on) { this._bump(); return; }
+    this._on = true;
+    const bump = () => this._bump();
+    ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(ev => document.addEventListener(ev, bump, { passive: true, capture: true }));
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) this._hiddenAt = Date.now();
+      else if (this._hiddenAt && Date.now() - this._hiddenAt > this.HIDDEN_MS) this.lock(true);
+    });
+    this._bump();
+  },
+  _bump() { clearTimeout(this._t); this._t = setTimeout(() => this.lock(true), this.IDLE_MS); },
+  lock(auto) {
+    try { if (auto) sessionStorage.setItem('quran_locked', '1'); } catch {}
+    DataManager.clearKey();
+    location.reload();
   }
 };
 
+const buildRegMsg = (d) => (
+`السلام عليكم ورحمة الله وبركاته\n` +
+      `أرغب في حجز حصة مجانية (أونلاين).\n\n` +
+      `*البيانات الأساسية:*\n` +
+      `• الاسم: ${d.name}\n` +
+      `• السن: ${d.age}\n` +
+      `• الواتساب: ${d.phone}\n` +
+      `• رقم ولي الأمر: ${d.guardianPhone}\n` +
+      `• النوع: ${d.gender}\n\n` +
+      `*مستوى الحفظ:*\n` +
+      `• الأجزاء: ${d.juz}\n` +
+      `• المستوى: ${d.level}\n\n` +
+      `*تاريخ حجز الحصة المجانية:*\n` +
+      `• تاريخ اليوم الذي تم فيه الحجز: ${formatDateAr(d.date)}\n\n` +
+      `*الأيام المفضلة:*\n` +
+      `• ${d.days.join('، ')}\n\n` +
+      `جزاكم الله خيرًا.`
+);
+
 /* ===================== Public events ===================== */
 document.addEventListener('DOMContentLoaded', async () => {
-  await DataManager.load();
   const y = $('#year'); if (y) y.textContent = new Date().getFullYear();
 
   $('#regName')?.addEventListener('input', debounce(e => applyValidation(e.target, $('#errName'), Validator.name), 250));
   $('#regAge')?.addEventListener('input', debounce(e => applyValidation(e.target, $('#errAge'), Validator.age), 250));
   $('#regPhone')?.addEventListener('input', debounce(e => applyValidation(e.target, $('#errPhone'), Validator.phone), 250));
+  $('#regGuardianPhone')?.addEventListener('input', debounce(e => applyValidation(e.target, $('#errGuardianPhone'), Validator.guardianPhone), 250));
+  /* تاريخ حجز الحصة = تاريخ اليوم، يُكتب تلقائيًا ويُحدَّث إن بقيت الصفحة مفتوحة حتى اليوم التالي */
+  const dateEl = $('#regDate');
+  const syncToday = () => {
+    if (!dateEl) return;
+    const now = new Date();
+    let txt;
+    try { txt = now.toLocaleDateString('ar-EG', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }); }
+    catch { txt = formatDateAr(toISO(now)); }
+    dateEl.value = txt;
+  };
+  syncToday();
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) syncToday(); });
   $('#regJuz')?.addEventListener('change', function () {
     if (this.value) { $('#errJuz').classList.remove('visible'); this.classList.remove('is-invalid'); }
   });
@@ -832,41 +1080,187 @@ document.addEventListener('DOMContentLoaded', async () => {
     if ($$('input[name="days"]:checked').length) $('#errDays').classList.remove('visible');
   });
 
-  $('#regForm')?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (!PublicForm.validateAll()) {
-      showToast('يرجى تصحيح الأخطاء أولًا', 'error');
-      $('.form-error.visible')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return;
-    }
+
+  /* ---- حركة وتفاعل الصفحة ---- */
+  (function initMotion() {
+    const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    /* شريط تقدم التمرير */
+    const bar = document.createElement('div'); bar.className = 'scroll-bar'; bar.innerHTML = '<i></i>';
+    document.body.appendChild(bar);
+    const barI = bar.firstChild;
+    const onScroll = () => {
+      const h = document.documentElement.scrollHeight - innerHeight;
+      barI.style.width = (h > 0 ? Math.min(100, scrollY / h * 100) : 0) + '%';
+    };
+    addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    if (reduce || !('IntersectionObserver' in window)) return;
+    /* ظهور تدريجي للعناصر عند الوصول لها */
+    const targets = $$('#view-public .section__header, #view-public .feature, #view-public .teacher__avatar-wrap, #view-public .teacher__name, #view-public .teacher__title, #view-public .teacher__desc, #view-public .skill, #view-public .form-fieldset, #view-public .form-actions');
+    document.documentElement.classList.add('js-motion');
+    targets.forEach((el) => {
+      el.classList.remove('animate-in');
+      el.classList.add('reveal');
+    });
+    const io = new IntersectionObserver((ents) => {
+      ents.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    targets.forEach((el) => io.observe(el));
+  })();
+
+  /* فتح رابط في تبويب جديد (window.open مع noopener يرجع null دائمًا فكان يغيّر الصفحة الحالية) */
+  const openLink = (url) => {
+    const a = document.createElement('a');
+    a.href = url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+    document.body.appendChild(a); a.click(); a.remove();
+  };
+  const waUrl = () => `https://wa.me/${TEACHER_PHONE}?text=${encodeURIComponent(buildRegMsg(PublicForm.getData()))}`;
+
+  /* ---- تجهيز ملف Word في الخلفية ---- */
+  let _docCache = { key: '', promise: null };
+  let _built = null, _builtKey = '';
+  const curKey = () => JSON.stringify(PublicForm.getData());
+  const prepareDoc = () => {
     const d = PublicForm.getData();
-    const msg =
-      `السلام عليكم ورحمة الله وبركاته\n` +
-      `أرغب في حجز حصة مجانية.\n\n` +
-      `*البيانات الأساسية:*\n` +
-      `• الاسم: ${d.name}\n` +
-      `• السن: ${d.age}\n` +
-      `• الواتساب: ${d.phone}\n` +
-      `• النوع: ${d.gender}\n\n` +
-      `*مستوى الحفظ:*\n` +
-      `• الأجزاء: ${d.juz}\n` +
-      `• المستوى: ${d.level}\n\n` +
-      `*الأيام المفضلة:*\n` +
-      `• ${d.days.join('، ')}\n\n` +
-      `جزاكم الله خيرًا.`;
-    window.open(`https://wa.me/${TEACHER_PHONE}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
-    showToast('تم فتح واتساب', 'success');
+    const key = JSON.stringify(d);
+    if (_docCache.key !== key || !_docCache.promise) {
+      const p = DocxEngine.buildRegistration(d)
+        .then(r => { if (r && _docCache.key === key) { _built = r; _builtKey = key; } return r; })
+        .catch(() => null)
+        .then(r => { if (!r && _docCache.key === key) _docCache = { key: '', promise: null }; return r; });
+      _docCache = { key, promise: p };
+    }
+    return _docCache.promise;
+  };
+  const readyDoc = () => (_built && _builtKey === curKey()) ? _built : null;
+  const warmUp = debounce(() => {
+    const d = PublicForm.getData();
+    if (d.name && d.age && d.phone && d.guardianPhone && d.juz && d.days.length) prepareDoc();
+  }, 600);
+  $('#regForm')?.addEventListener('input', warmUp);
+  $('#regForm')?.addEventListener('change', warmUp);
+
+  /* ---- الحالة والتحقق ---- */
+  const statusEls = [$('#regActionStatus'), $('#regShareStatus')];
+  const setStatus = (m) => {
+    statusEls.forEach(el => { if (el) el.textContent = m || ''; });
+    const vis = statusEls.find(el => el && el.offsetParent !== null);
+    if (m && vis) vis.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  };
+  const validateOrStop = () => {
+    syncToday();
+    if (PublicForm.validateAll()) return true;
+    showToast('يرجى تصحيح الأخطاء أولًا', 'error');
+    closePrev();
+    $('.form-error.visible')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return false;
+  };
+
+  /* ---- نافذة المعاينة ---- */
+  const prevModal = $('#modal-regPreview');
+  const confirmBox = $('#regPrevConfirm');
+  const previewCtrls = () => $$('[data-act]', prevModal || document.createElement('div'));
+  const closeMenus = () => {};
+  function closePrev() { closeMenus(); prevModal?.classList.remove('active'); }
+  const syncPreviewBtns = () => previewCtrls().forEach(b => { b.disabled = !confirmBox?.checked; });
+  const renderPreview = (d) => {
+    let h = '';
+    DocxEngine.registrationData(d).forEach(sec => {
+      h += '<div style="background:var(--p700);color:#fff;font-weight:800;padding:.45rem .8rem;border-radius:8px;margin:1rem 0 .4rem;text-align:right;">' + escapeHtml(sec.title) + '</div>';
+      sec.rows.forEach(r => {
+        h += '<div style="padding:.35rem .2rem;text-align:right;border-bottom:1px solid var(--border);"><b style="color:var(--p700);">' + escapeHtml(r[0]) + '</b> <span>' + escapeHtml(r[1] || '—') + '</span></div>';
+      });
+    });
+    $('#regPrevBody').innerHTML = h;
+  };
+  $('#btnPreviewReg')?.addEventListener('click', () => {
+    if (!validateOrStop()) return;
+    renderPreview(PublicForm.getData());
+    confirmBox.checked = false; syncPreviewBtns(); setStatus('');
+    prevModal.classList.add('active');
+    prepareDoc();
+    setTimeout(() => confirmBox.focus(), 50);
+  });
+  confirmBox?.addEventListener('change', syncPreviewBtns);
+  $('#btnRegEdit')?.addEventListener('click', () => { closePrev(); $('#btnPreviewReg')?.focus(); });
+  prevModal?.addEventListener('click', (e) => { if (e.target === prevModal) closePrev(); });
+
+  /* ---- الخيارات الثلاثة ---- */
+  let _busy = false;
+  const actions = {
+    /* 1) إرسال التفاصيل كرسالة على واتساب المعلم */
+    wa() {
+      if (!validateOrStop()) return;
+      openLink(waUrl());
+      showToast('تم فتح واتساب، اضغط إرسال هناك', 'success');
+      setStatus('تم فتح واتساب على رقم المعلم برسالة فيها كل بياناتك. اضغط «إرسال» هناك.');
+    },
+    /* 2) تحميل ملف Word على الجهاز */
+    async word() {
+      if (_busy || !validateOrStop()) return;
+      _busy = true;
+      try {
+        setStatus('⏳ جارٍ تجهيز الملف…');
+        const r = readyDoc() || await prepareDoc();
+        if (!r) { setStatus('تعذر تجهيز ملف Word (تأكد من الاتصال بالإنترنت). يمكنك إرسال بياناتك على واتساب مباشرة.'); showToast('تعذر تجهيز الملف', 'error'); return; }
+        DocxEngine.downloadBlob(r.blob, r.filename);
+        showToast('تم تحميل الملف ✅', 'success');
+        setStatus('✅ تم التحميل. الآن من جهازك افتح الملف ← اضغط «مشاركة» ← اختر واتساب ← ثم المعلم.');
+      } finally { _busy = false; }
+    }
+  };
+  $$('button[data-act]').forEach(b => b.addEventListener('click', () => {
+    if (b.disabled) return;
+    closeMenus();
+    const f = actions[b.dataset.act]; if (f) f();
+  }));
+  $('#regForm')?.addEventListener('submit', (e) => { e.preventDefault(); actions.wa(); });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (prevModal?.classList.contains('active')) closePrev();
   });
 
-  $('#btnWord')?.addEventListener('click', async () => {
-    if (!PublicForm.validateAll()) { showToast('يرجى تصحيح الأخطاء أولًا', 'error'); return; }
-    try { await DocxEngine.generateRegistration(PublicForm.getData()); }
-    catch (err) { showToast('تعذر إنشاء الملف: ' + err.message, 'error'); }
+  document.body.insertAdjacentHTML('beforeend', `
+  <div id="modal-changePass" class="modal" role="dialog" aria-modal="true" aria-labelledby="cpTitle">
+    <div class="modal-content" style="max-width:460px;text-align:right;direction:rtl;">
+      <h3 id="cpTitle" style="margin-bottom:1rem;">🔑 تغيير الرمز السري</h3>
+      <form id="formChangePass" novalidate>
+        <div class="form-group"><label class="form-label" for="cpOld">الرمز الحالي</label><input type="password" id="cpOld" class="form-input" autocomplete="off"></div>
+        <div class="form-group"><label class="form-label" for="cpNew">الرمز الجديد (10 أحرف على الأقل)</label><input type="password" id="cpNew" class="form-input" autocomplete="off"></div>
+        <div class="form-group"><label class="form-label" for="cpNew2">تأكيد الرمز الجديد</label><input type="password" id="cpNew2" class="form-input" autocomplete="off"></div>
+        <div class="form-error" id="cpErr"></div>
+        <div class="form-actions" style="margin-top:1rem;">
+          <button type="submit" class="btn btn--primary" id="cpSave">💾 حفظ</button>
+          <button type="button" class="btn btn--secondary" id="cpCancel">إلغاء</button>
+        </div>
+      </form>
+    </div>
+  </div>`);
+  const cpModal = $('#modal-changePass'), cpErr = $('#cpErr');
+  const cpClose = () => { cpModal.classList.remove('active'); ['#cpOld', '#cpNew', '#cpNew2'].forEach(s => { $(s).value = ''; }); cpErr.classList.remove('visible'); };
+  $('#btnChangePass')?.addEventListener('click', () => { cpModal.classList.add('active'); setTimeout(() => $('#cpOld').focus(), 60); });
+  $('#cpCancel')?.addEventListener('click', cpClose);
+  $('#formChangePass')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const o = $('#cpOld').value, n = $('#cpNew').value, n2 = $('#cpNew2').value;
+    const fail = (m) => { cpErr.textContent = m; cpErr.classList.add('visible'); };
+    if (n.length < 10) return fail('الرمز الجديد يجب ألا يقل عن 10 أحرف');
+    if (!/[A-Za-z]/.test(n) || !/\d/.test(n)) return fail('استخدم حروفًا وأرقامًا معًا');
+    if (n !== n2) return fail('تأكيد الرمز غير مطابق');
+    if (n === o) return fail('الرمز الجديد مطابق للحالي');
+    const btn = $('#cpSave'); btn.disabled = true; btn.textContent = 'جارٍ الحفظ…';
+    try { await Auth.changePassword(o, n); cpClose(); showToast('تم تغيير الرمز وإعادة تشفير البيانات', 'success'); }
+    catch (err) { fail(err.message || 'تعذر تغيير الرمز'); }
+    finally { btn.disabled = false; btn.textContent = '💾 حفظ'; }
   });
+
+  /* تحميل مكتبة Word مبكرًا عند أول تفاعل مع النموذج فقط (لتسريع الصفحة لبقية الزوار) */
+  $('#regForm')?.addEventListener('focusin', () => { loadDocxLib().catch(() => {}); }, { once: true });
 
   $('#secretLink')?.addEventListener('click', () => Auth.askPassword());
   $('#loginBackBtn')?.addEventListener('click', () => Auth.showPublic());
   $('#loginForm')?.addEventListener('submit', (e) => { e.preventDefault(); Auth.login($('#loginCode').value); });
+  try { if (sessionStorage.getItem('quran_locked')) { sessionStorage.removeItem('quran_locked'); showToast('تم قفل لوحة التحكم تلقائيًا لعدم النشاط', 'info'); } } catch {}
 });
 
 /* ===================== HTML inject: dashboard + student + modals ===================== */
@@ -880,6 +1274,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         <div class="export-group">
           <button class="btn btn--sm btn--secondary" id="btnExportWord">📄 Word</button>
           <button class="btn btn--sm btn--excel" id="btnExportExcel">📊 Excel</button>
+          <button class="btn btn--sm btn--outline" id="btnChangePass">🔑 الرمز</button>
           <button class="btn btn--sm btn--outline" id="btnLogout">🚪 خروج</button>
         </div>
       </div>
@@ -922,6 +1317,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <h2 style="margin:0;font-size:1.1rem;" id="studentHeaderName">ملف الطالب</h2>
         </div>
         <div class="export-group">
+          <button class="btn btn--sm btn--primary" id="btnPreviewReport">📋 معاينة تقرير</button>
           <button class="btn btn--sm btn--secondary" id="btnAddLessonToStudent">➕ تسجيل حصة</button>
         </div>
       </div>
@@ -1104,7 +1500,25 @@ document.addEventListener('DOMContentLoaded', async () => {
   </div>
 
   <!-- ===================== مودال معاينة التقرير ===================== -->
-  <div id="modal-preview" class="modal">
+  <!-- ===================== معاينة طلب الحجز قبل المشاركة ===================== -->
+  <div id="modal-regPreview" class="modal" role="dialog" aria-modal="true" aria-labelledby="regPrevTitle">
+    <div class="modal-content" style="max-width:640px;text-align:right;direction:rtl;">
+      <h3 id="regPrevTitle" style="margin-bottom:.35rem;text-align:center;color:var(--p700);">معاينة ملف Word</h3>
+      <p style="text-align:center;font-size:.9rem;color:var(--fg-muted);margin-bottom:1rem;">راجع بياناتك جيدًا؛ هذا هو محتوى الملف الذي سيصل للأستاذ.</p>
+      <div id="regPrevBody" style="direction:rtl;text-align:right;"></div>
+      <label class="form-option" style="margin-top:1rem;display:flex;align-items:center;gap:.6rem;justify-content:flex-start;">
+        <input type="checkbox" id="regPrevConfirm"><span>أؤكد أن بياناتي صحيحة</span>
+      </label>
+      <div class="form-actions" style="margin-top:1rem;">
+        <button type="button" class="btn btn--wa" data-act="wa" disabled>📱 إرسال على واتساب</button>
+        <button type="button" class="btn btn--primary" data-act="word" disabled>📄 تحميل ملف Word</button>
+        <button type="button" class="btn btn--secondary" id="btnRegEdit">✏️ تعديل البيانات</button>
+      </div>
+      <p id="regShareStatus" class="status-box" role="status" aria-live="polite" style="margin-top:.75rem;"></p>
+    </div>
+  </div>
+
+  <div id="modal-preview" class="modal" role="dialog" aria-modal="true" aria-label="معاينة التقرير">
     <div class="modal-content" style="max-width:1100px;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;flex-wrap:wrap;gap:.5rem;">
         <h3 style="margin:0;">📋 معاينة التقرير</h3>
@@ -1127,7 +1541,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         <button class="btn btn--outline" id="btnSavePreview">💾 حفظ التعديلات</button>
         <button class="btn btn--primary" id="btnPreviewWord">📄 Word</button>
         <button class="btn btn--excel" id="btnPreviewExcel">📊 Excel</button>
-        <button class="btn btn--wa" id="btnPreviewWa">📱 واتساب</button>
+        <button class="btn btn--wa" id="btnPreviewShare">📤 مشاركة الملف</button>
+        <button class="btn btn--wa" id="btnPreviewWa">📱 واتساب (نص)</button>
       </div>
     </div>
   </div>
@@ -1333,14 +1748,16 @@ App.StudentView.renderLessons = function () {
   container.querySelectorAll('[data-del]').forEach(b => b.addEventListener('click', function () { App.Lessons.delete(this.dataset.del); }));
 };
 
-App.StudentView.renderLessonCard = function (l) {
+App.StudentView.renderLessonCard = function (l0) {
+  const l = Object.assign({}, l0);
+  ['ayah_from','ayah_to','new_accuracy','new_mistakes','near_accuracy','near_mistakes','mid_accuracy','mid_mistakes','far_accuracy','far_mistakes','tajweed_in_lesson','tajweed_at_home'].forEach(function (k) { if (l[k] != null) l[k] = escapeHtml(l[k]); });
   const newMem = l.surah ? `${escapeHtml(l.surah)} ${l.ayah_from||''}${l.ayah_to ? ' → ' + l.ayah_to : ''}` : '—';
   const tajweedBlock = l.tajweed_taken === 'نعم' ? `
     <div class="lesson-card__row"><span class="lesson-card__label">🎓 التجويد:</span><span>${escapeHtml(l.tajweed_rule||'—')}</span></div>
     ${l.tajweed_explain ? `<div class="lesson-card__row"><span class="lesson-card__label">الشرح:</span><span>${escapeHtml(l.tajweed_explain)}</span></div>` : ''}
     <div class="lesson-card__row">
-      <span class="tajweed-badge ${l.tajweed_in_lesson==='نعم'?'tajweed-yes':'tajweed-no'}">في الحصة: ${l.tajweed_in_lesson||'لا'}</span>
-      <span class="tajweed-badge ${l.tajweed_at_home==='نعم'?'tajweed-yes':'tajweed-no'}">في البيت: ${l.tajweed_at_home||'لا'}</span>
+      <span class="tajweed-badge ${l0.tajweed_in_lesson==='نعم'?'tajweed-yes':'tajweed-no'}">في الحصة: ${l.tajweed_in_lesson||'لا'}</span>
+      <span class="tajweed-badge ${l0.tajweed_at_home==='نعم'?'tajweed-yes':'tajweed-no'}">في البيت: ${l.tajweed_at_home||'لا'}</span>
     </div>
     ${l.tajweed_notes ? `<div class="lesson-card__row"><span class="lesson-card__label">ملاحظات التجويد:</span><span>${escapeHtml(l.tajweed_notes)}</span></div>` : ''}
   ` : '<div class="lesson-card__row"><span class="lesson-card__label">🎓 التجويد:</span><span>لم يُؤخذ</span></div>';
@@ -1485,13 +1902,10 @@ App.StudentForm.reset = function () {
 
 /* ===================== Dashboard events ===================== */
 document.addEventListener('DOMContentLoaded', () => {
-  $('#btnLogout')?.addEventListener('click', () => {
-    switchView('view-public');
-    currentStudentId = null;
-  });
+  $('#btnLogout')?.addEventListener('click', () => Auth.lock());
   $('#btnAddStudent')?.addEventListener('click', () => App.StudentForm.openAdd());
-  $('#searchStudents')?.addEventListener('input', debounce(function () {
-    App.Dashboard._searchTerm = this.value;
+  $('#searchStudents')?.addEventListener('input', debounce(function (e) {
+    App.Dashboard._searchTerm = e.target.value;
     App.Dashboard.loadStudents();
   }, 200));
   $$('[data-close]').forEach(b => b.addEventListener('click', () => App.Dashboard.closeModal(b.dataset.close)));
@@ -1644,8 +2058,8 @@ App.Reports.collect = function (studentId, type, from, to) {
 DocxEngine.cell = function (text, opts) {
   opts = opts || {};
   const { TableCell, Paragraph, AlignmentType } = docx;
-  const align = opts.align === 'CENTER' ? AlignmentType.CENTER :
-                opts.align === 'LEFT' ? AlignmentType.LEFT : AlignmentType.RIGHT;
+  // في الفقرات RTL الافتراضي هو اليمين، فلا نحدد محاذاة إلا للتوسيط
+  const align = opts.align === 'CENTER' ? AlignmentType.CENTER : undefined;
   const cellOpts = {
     children: [new Paragraph({
       bidirectional: true,
@@ -1667,7 +2081,7 @@ DocxEngine.table = function (headers, rows) {
   });
   const dataRows = rows.map(function (r) {
     return new TableRow({
-      children: r.map(function (v, i) { return DocxEngine.cell(v, { align: i === 0 ? 'RIGHT' : 'CENTER' }); })
+      children: r.map(function (v) { return DocxEngine.cell(v, { align: 'RIGHT' }); })
     });
   });
   return new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, visuallyRightToLeft: true, rows: [headerRow].concat(dataRows) });
@@ -1678,7 +2092,16 @@ DocxEngine.fmtNew = function (l) {
   return (l.surah + ' ' + (l.ayah_from || '') + (l.ayah_to ? '-' + l.ayah_to : '')).trim();
 };
 
-DocxEngine.generateReport = async function (st, lessons, from, to, notes, type) {
+DocxEngine.buildReport = async function (st, lessons, from, to, type) {
+  let out = null;
+  const orig = this.save;
+  this.save = async function (doc, filename) { out = { blob: await docx.Packer.toBlob(doc), filename: filename }; };
+  const origToast = showToast;
+  try { await DocxEngine.generateReport(st, lessons, from, to, '', type, true); } finally { this.save = orig; }
+  return out;
+};
+
+DocxEngine.generateReport = async function (st, lessons, from, to, notes, type, silent) {
   await this.load();
   const { Document, Paragraph, AlignmentType } = docx;
   const titles = { daily: 'تقرير يومي', weekly: 'تقرير أسبوعي', monthly: 'تقرير شهري', custom: 'تقرير مخصص' };
@@ -1706,7 +2129,7 @@ DocxEngine.generateReport = async function (st, lessons, from, to, notes, type) 
           l.new_accuracy ? l.new_accuracy + '%' : '—', String(l.new_mistakes == null ? '—' : l.new_mistakes),
           l.near_past || '—', l.mid_past || '—', l.far_past || '—',
           l.tajweed_taken === 'نعم' ? (l.tajweed_rule || 'نعم') : '—',
-          l.stars ? '⭐'.repeat(parseInt(l.stars, 10)) : '—'
+          l.stars ? '⭐'.repeat(Math.max(0, Math.min(5, parseInt(l.stars, 10) || 0))) : '—'
         ];
       })
     ));
@@ -1714,7 +2137,7 @@ DocxEngine.generateReport = async function (st, lessons, from, to, notes, type) 
     lessons.forEach(function (l) {
       const hasNotes = l.notes || l.new_notes || l.near_notes || l.mid_notes || l.far_notes || l.tajweed_notes || (l.has_homework === 'نعم' && l.homework);
       if (hasNotes) {
-        children.push(new Paragraph({ bidirectional: true, alignment: AlignmentType.RIGHT, spacing: { before: 140, after: 60 },
+        children.push(new Paragraph({ bidirectional: true, spacing: { before: 140, after: 60 },
           children: [DocxEngine.run('📅 ' + formatDateAr(l.date) + ' (' + (l.day || '') + ')', { bold: true, size: 22, color: '2D5A4A' })] }));
         if (l.new_notes) children.push(DocxEngine.line('الجديد:', l.new_notes));
         if (l.near_notes) children.push(DocxEngine.line('ماضي قريب:', l.near_notes));
@@ -1730,12 +2153,12 @@ DocxEngine.generateReport = async function (st, lessons, from, to, notes, type) 
   }
   if (notes) {
     children.push(this.sectionTitle('ملاحظات المعلم'));
-    children.push(new Paragraph({ bidirectional: true, alignment: AlignmentType.RIGHT, children: [this.run(notes)] }));
+    children.push(new Paragraph({ bidirectional: true, children: [this.run(notes)] }));
   }
   const doc = new Document({ styles: this.docStyles(), sections: [{ properties: { page: this.pageProps() }, children: children }] });
   const safeName = (st.name || 'طالب').replace(/\s+/g, '_');
   await this.save(doc, tt + '_' + safeName + '_' + from + '.docx');
-  showToast('تم تحميل ملف Word', 'success');
+  if (!silent) showToast('تم تحميل ملف Word', 'success');
 };
 
 DocxEngine.generateExport = async function () {
@@ -1779,14 +2202,7 @@ DocxEngine.generateExport = async function () {
 };
 
 /* ===================== Excel Engine ===================== */
-App.ExcelEngine.load = async function () {
-  if (typeof ExcelJS !== 'undefined') return ExcelJS;
-  for (let i = 0; i < 100; i++) {
-    await new Promise(function (r) { setTimeout(r, 100); });
-    if (typeof ExcelJS !== 'undefined') return ExcelJS;
-  }
-  throw new Error('تعذر تحميل مكتبة Excel');
-};
+App.ExcelEngine.load = function () { return loadExcelLib(); };
 
 App.ExcelEngine._rtl = function (sheet) { sheet.views = [{ rightToLeft: true }]; };
 
@@ -1919,12 +2335,13 @@ App.Preview.open = function () {
   const today = toISO(new Date());
   $('#previewFrom').value = toISO(mStart(today));
   $('#previewTo').value = today;
-  this.render();
+  this.render(true);
   App.Dashboard.openModal('preview');
 };
 
-App.Preview.render = function () {
+App.Preview.render = function (force) {
   if (!currentStudentId) return;
+  if (previewDirty && !force && !confirm('لديك تعديلات غير محفوظة ستضيع عند التحديث. هل تريد المتابعة؟')) return;
   const type = $('#previewType').value;
   const from = $('#previewFrom').value;
   const to = $('#previewTo').value;
@@ -1932,6 +2349,7 @@ App.Preview.render = function () {
   const data = App.Reports.collect(currentStudentId, type, from, to);
   if (!data) return;
   const st = data.st, lessons = data.lessons, range = data.range;
+  previewDirty = false;
   previewDraft = lessons.map(function (l) { const copy = {}; for (const k in l) copy[k] = l[k]; return copy; });
   let html = '<h3 style="margin:0 0 .5rem;color:var(--p700);">' + escapeHtml(st.name) + '</h3>' +
     '<p style="font-size:.85rem;color:var(--fg-muted);margin-bottom:1rem;">من ' + formatDateAr(range.from) + ' إلى ' + formatDateAr(range.to) + ' — ' + lessons.length + ' حصة</p>';
@@ -1969,13 +2387,35 @@ App.Preview.render = function () {
       const t = e.target;
       if (!t.dataset.pid) return;
       const item = previewDraft.find(function (x) { return x.id === t.dataset.pid; });
-      if (item) item[t.dataset.field] = t.value;
+      if (item) { item[t.dataset.field] = t.value; previewDirty = true; }
     });
   });
 };
 
+App.Preview.validateDraft = function () {
+  const numF = ['ayah_from', 'ayah_to', 'new_accuracy', 'new_mistakes'];
+  for (const p of previewDraft) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(String(p.date || '').trim()) || isNaN(new Date(p.date + 'T00:00:00'))) return 'التاريخ يجب أن يكون بصيغة 2026-11-01 (' + (p.date || 'فارغ') + ')';
+    for (const f of numF) {
+      const v = String(p[f] == null ? '' : p[f]).trim();
+      if (v !== '' && !/^\d+$/.test(v)) return 'الخانة "' + f + '" تقبل أرقامًا فقط في حصة ' + p.date;
+    }
+    const acc = String(p.new_accuracy == null ? '' : p.new_accuracy).trim();
+    if (acc !== '' && parseInt(acc, 10) > 100) return 'الدقة لا تزيد عن 100 في حصة ' + p.date;
+    const st = String(p.stars == null ? '' : p.stars).trim();
+    if (st !== '' && !/^[0-5]$/.test(st)) return 'التقييم من 0 إلى 5 في حصة ' + p.date;
+  }
+  return null;
+};
+
 App.Preview.saveToDB = async function () {
   if (!previewDraft) { showToast('لا توجد تعديلات', 'error'); return; }
+  const verr = this.validateDraft();
+  if (verr) { showToast(verr, 'error'); return; }
+  previewDraft.forEach(function (p) {
+    ['ayah_from', 'ayah_to', 'new_accuracy', 'new_mistakes'].forEach(function (f) { const v = String(p[f] == null ? '' : p[f]).trim(); p[f] = v === '' ? '' : parseInt(v, 10); });
+    p.date = String(p.date).trim();
+  });
   previewDraft.forEach(function (p) {
     const idx = DB.lessons.findIndex(function (l) { return l.id === p.id; });
     if (idx >= 0) {
@@ -1986,6 +2426,7 @@ App.Preview.saveToDB = async function () {
     }
   });
   await DataManager.save();
+  previewDirty = false;
   showToast('تم حفظ التعديلات', 'success');
   App.StudentView.renderLessons();
   App.Dashboard.loadStats();
@@ -2007,6 +2448,24 @@ App.Preview.exportExcel = async function () {
   await App.ExcelEngine.generateReport(st, previewDraft || [], range.from, range.to, '', type);
 };
 
+App.Preview.shareFile = async function () {
+  const st = DB.students.find(function (s) { return s.id === currentStudentId; });
+  if (!st) return;
+  const verr = this.validateDraft && previewDraft ? this.validateDraft() : null;
+  if (verr) { showToast(verr, 'error'); return; }
+  const type = $('#previewType').value;
+  const range = App.Reports.getRange(type, $('#previewFrom').value, $('#previewTo').value);
+  const built = await DocxEngine.buildReport(st, previewDraft || [], range.from, range.to, type);
+  /* الملف جاهز الآن؛ إن انتهت صلاحية النقر يظهر زر مشاركة ثانٍ */
+  const go = async () => {
+    const r = await DocxEngine.shareFile(built.blob, built.filename, 'تقرير الطالب ' + st.name, built.filename);
+    if (r === 'shared') showToast('تمت المشاركة ✅', 'success');
+    else if (r === 'cancelled') return;
+    else { DocxEngine.downloadBlob(built.blob, built.filename); showToast('تم حفظ الملف لإرساله يدويًا', 'info'); }
+  };
+  try { await go(); } catch { DocxEngine.downloadBlob(built.blob, built.filename); }
+};
+
 App.Preview.shareWhatsApp = function () {
   const st = DB.students.find(function (s) { return s.id === currentStudentId; });
   if (!st) return;
@@ -2022,11 +2481,12 @@ App.Preview.shareWhatsApp = function () {
     if (l.mid_past) msg += '• ماضي متوسط: ' + l.mid_past + (l.mid_heard ? ' (' + l.mid_heard + ')' : '') + '\n';
     if (l.far_past) msg += '• ماضي بعيد: ' + l.far_past + (l.far_heard ? ' (' + l.far_heard + ')' : '') + '\n';
     if (l.tajweed_taken === 'نعم') msg += '• التجويد: ' + (l.tajweed_rule || '') + ' — في الحصة: ' + l.tajweed_in_lesson + ' — في البيت: ' + l.tajweed_at_home + '\n';
-    if (l.stars) msg += '• التقييم: ' + '⭐'.repeat(parseInt(l.stars, 10)) + '\n';
+    if (l.stars) msg += '• التقييم: ' + '⭐'.repeat(Math.max(0, Math.min(5, parseInt(l.stars, 10) || 0))) + '\n';
     if (l.has_homework === 'نعم' && l.homework) msg += '• التكليف: ' + l.homework + '\n';
     if (l.notes) msg += '• ملاحظات: ' + l.notes + '\n';
   });
   msg += '\nجزاكم الله خيرًا.';
+  if (msg.length > 3500) msg = msg.slice(0, 3400).replace(/\n[^\n]*$/, '') + '\n\n… (التقرير طويل؛ استخدم زر مشاركة الملف لإرساله كاملًا)\nجزاكم الله خيرًا.';
   window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
   showToast('تم فتح واتساب', 'success');
 };
@@ -2050,6 +2510,8 @@ document.addEventListener('DOMContentLoaded', function () {
   $('#btnPreviewWord')?.addEventListener('click', function () { App.Preview.exportWord().catch(function (e) { showToast('فشل: ' + e.message, 'error'); }); });
   $('#btnPreviewExcel')?.addEventListener('click', function () { App.Preview.exportExcel().catch(function (e) { showToast('فشل: ' + e.message, 'error'); }); });
   $('#btnPreviewWa')?.addEventListener('click', function () { App.Preview.shareWhatsApp(); });
+  $('#btnPreviewShare')?.addEventListener('click', function () { App.Preview.shareFile().catch(function (e) { showToast('فشل: ' + e.message, 'error'); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { const m = document.querySelector('.modal.active:not(#modal-regPreview):not(#modal-changePass)'); if (m) m.classList.remove('active'); } });
 
   $('#btnExportWord')?.addEventListener('click', async function () {
     try { await DocxEngine.generateExport(); }
