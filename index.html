@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-3e5wDaW8L4yphvbvDTpgzKW3jpQ1xnmbWfUA9Kul9C4=' 'sha256-zc2owliyu4q4vaqdLn0m5ILanmohwoTA1YGZTmoZKNw=' https://cdn.jsdelivr.net https://unpkg.com 'unsafe-eval'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-qS/Lx3ys5HDwaq8SAb+CpAw2pIUC31ouEQpup2RGT1E=' 'sha256-cpbMkp/tvv8yvOoPt48lB+YCdPMqnZH03ZrORoBJQdE=' 'sha256-q7uB8yLRsJZzL2xkmUwlif81NwfTOY4y5MPV49x+lO8=' https://cdn.jsdelivr.net https://unpkg.com 'unsafe-eval'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#2D5A4A">
@@ -13,8 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap">
-<script>if(window.top!==window.self){document.documentElement.style.display='none'}</script>
+<link rel="stylesheet" id="gf" media="print" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Amiri:wght@700&display=swap">
+<script>if(window.top!==window.self){document.documentElement.style.display='none'}(function(){var l=document.getElementById('gf');if(!l)return;function on(){l.media='all'}l.addEventListener('load',on);if(l.sheet)on()})();</script>
 
 <style>
 @layer reset,tokens,base,components,forms,dash,feedback,motion;
@@ -303,9 +303,163 @@ input[readonly].form-input{background:var(--bg-subtle);cursor:default;font-weigh
 .time-grid .form-option{display:block}
 .time-grid .form-option span{width:100%;justify-content:center;padding:.55rem .4rem}
 #slotSummary:not(:empty){font-weight:600}
+
+/* ===== أيقونات زجاجية بأسلوب iOS ===== */
+.ic{width:1.2em;height:1.2em;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.feature__icon,.skill__icon,.reminder__icon{position:relative;overflow:hidden;color:#fff;border-radius:30%;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,var(--g1),var(--g2));box-shadow:inset 0 1.5px 1px rgba(255,255,255,.7),inset 0 -8px 14px rgba(0,0,0,.14),inset 0 0 0 1px rgba(255,255,255,.25),0 8px 18px -6px var(--g2)}
+.feature__icon::before,.skill__icon::before,.reminder__icon::before{content:"";position:absolute;inset:0 0 50% 0;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.04));border-radius:30% 30% 70% 70%/30% 30% 40% 40%}
+.feature__icon .ic,.skill__icon .ic,.reminder__icon .ic{position:relative;z-index:1;width:56%;height:56%;filter:drop-shadow(0 1px 1px rgba(0,0,0,.28))}
+.reminder__icon{width:40px;height:40px}
+.gc0{--g1:#34d399;--g2:#047857}.gc1{--g1:#fcd34d;--g2:#b45309}.gc2{--g1:#5eead4;--g2:#0f766e}.gc3{--g1:#7dd3fc;--g2:#0369a1}.gc4{--g1:#86efac;--g2:#15803d}
+.bi{display:inline-flex;align-items:center;justify-content:center;width:1.9em;height:1.9em;border-radius:32%;margin-inline-end:.5rem;vertical-align:middle;background:color-mix(in srgb,currentColor 16%,transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 0 0 1px color-mix(in srgb,currentColor 18%,transparent);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.bi .ic{width:1.1em;height:1.1em}
+.teacher__avatar{position:relative;overflow:hidden;box-shadow:inset 0 2px 2px rgba(255,255,255,.6),inset 0 -14px 22px rgba(0,0,0,.18),0 14px 30px -10px rgba(4,120,87,.6)}
+.teacher__avatar::before{content:"";position:absolute;inset:0 0 48% 0;background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,.02));border-radius:50% 50% 60% 60%/45% 45% 55% 55%}
+.btn{border-radius:14px}.form-input,.form-option span{border-radius:14px}
+.feature,.skill{border-radius:20px}
+
+/* ===== أيقونات زجاجية iOS v2 + هوية قرآنية ===== */
+.ic{stroke-width:2}
+.gc0{--g1:#34d399;--g2:#065f46}.gc1{--g1:#fde68a;--g2:#b45309}.gc2{--g1:#5eead4;--g2:#0f766e}.gc3{--g1:#7dd3fc;--g2:#1d4ed8}.gc4{--g1:#86efac;--g2:#166534}.gc5{--g1:#fda4af;--g2:#be123c}
+.gi,.bi{display:inline-flex;position:relative;overflow:hidden;align-items:center;justify-content:center;vertical-align:middle;width:1.95em;height:1.95em;border-radius:30%;margin-inline:.1em .5em;color:#fff;background:linear-gradient(150deg,var(--g1,#34d399),var(--g2,#065f46));box-shadow:inset 0 1.5px 1px rgba(255,255,255,.75),inset 0 -7px 12px rgba(0,0,0,.18),inset 0 0 0 1px rgba(255,255,255,.3),0 6px 14px -5px var(--g2,#065f46);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.gi::before,.bi::before{content:"";position:absolute;inset:0 0 50% 0;background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,.04));border-radius:30% 30% 70% 70%/30% 30% 40% 40%}
+.gi .ic,.bi .ic{position:relative;z-index:1;width:60%;height:60%;filter:drop-shadow(0 1px 1px rgba(0,0,0,.3))}
+.btn--primary .bi{--g1:#fde68a;--g2:#b45309}.btn--outline .bi,.btn--sm .bi{--g1:#34d399;--g2:#065f46}.btn--wa .bi{--g1:#4ade80;--g2:#15803d}
+.feature__icon::after,.skill__icon::after,.reminder__icon::after,.gi::after,.bi::after{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M12 1l3 5.5 5.5-3-3 5.5L23 12l-5.5 3 3 5.5-5.5-3L12 23l-3-5.5-5.5 3 3-5.5L1 12l5.5-3-3-5.5 5.5 3Z'/%3E%3C/svg%3E") center/72% no-repeat;opacity:.17;pointer-events:none}
+.feature__icon .ic,.skill__icon .ic,.reminder__icon .ic,.gi .ic,.bi .ic{fill:rgba(255,255,255,.26)}
+.feature__icon,.skill__icon{border-radius:28%}
+.theme-toggle .gi{font-size:1.1rem;margin:0}
+.time-period__title .gi{font-size:.8rem}
+
+/* ===== v2: سرعة وتفاعل ===== */
+a,button,label,.skill,.feature{touch-action:manipulation}
+.btn{position:relative;overflow:hidden}
+.rip{position:absolute;border-radius:50%;background:currentColor;opacity:.2;transform:scale(0);pointer-events:none;animation:rip .55s ease-out forwards}
+@keyframes rip{to{transform:scale(1);opacity:0}}
+.btn:focus-visible{outline-offset:4px}
+.btn--light:hover:not(:disabled),.btn--primary:hover:not(:disabled){box-shadow:var(--sh-xl)}
+.scroll-bar>i{width:100%;transform:scaleX(0);transform-origin:right;transition:none;will-change:transform}
+.fab{animation:none}
+.fab::after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid #1FA855;pointer-events:none;animation:fabRing 2.6s ease-out infinite}
+.fab:hover::after{animation:none;opacity:0}
+@keyframes fabRing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.7);opacity:0}}
+.form-option input:checked+span{animation:chipPop .28s ease}
+.form-option span:active{transform:scale(.96)}
+@keyframes chipPop{0%{transform:scale(.94)}60%{transform:scale(1.05)}100%{transform:scale(1)}}
+.skill,.feature{cursor:pointer;-webkit-user-select:none;user-select:none}
+.skill:active,.feature:active{transform:scale(.985)}
+.skill.tap .skill__icon,.feature.tap .feature__icon{animation:iconPop .45s cubic-bezier(.2,.9,.3,1.4)}
+@keyframes iconPop{0%{transform:scale(1)}40%{transform:scale(1.18) rotate(-6deg)}100%{transform:scale(1)}}
+.teacher__avatar{cursor:pointer}
+.teacher__avatar.spin::after{animation:ringSpin 1s ease}
+@keyframes ringSpin{to{transform:rotate(360deg)}}
+.form-progress{height:6px;border-radius:99px;background:var(--bg-subtle);overflow:hidden;margin-bottom:1.75rem}
+.form-progress i{display:block;height:100%;background:linear-gradient(90deg,var(--p500),var(--s500));transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+#regForm.spot{animation:spot 1.8s ease-out}
+@keyframes spot{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--s500) 55%,transparent)}100%{box-shadow:0 0 0 24px transparent}}
+#regForm.is-ready .form-actions .btn--wa{box-shadow:0 0 0 4px color-mix(in srgb,#1FA855 24%,transparent),var(--sh-lg)}
+.cta-pill{position:fixed;inset-inline:0;margin-inline:auto;width:max-content;max-width:calc(100% - 9.5rem);bottom:calc(1.25rem + env(safe-area-inset-bottom,0px));z-index:940;box-shadow:var(--sh-xl);opacity:0;transform:translateY(24px);pointer-events:none;transition:opacity .25s ease,transform .25s ease}
+.cta-pill.show{opacity:1;transform:none;pointer-events:auto}
+@media(prefers-reduced-motion:reduce){.fab::after,.cta-pill{animation:none!important;transition:none!important}}
+</style>
+<style id="v3">
+/* ===== راحة العين وانسيابية ===== */
+:root{--soft-bg:#F6F2EA;--reg-tint:#EAF4EE;--reg-edge:#3D7A64}
+html[data-theme="dark"]{--soft-bg:#1A1815;--reg-tint:#1C2B25;--reg-edge:#6FA08E}
+html{scroll-padding-top:12px}
+body{line-height:1.85;background:var(--soft-bg)}
+p{max-width:68ch}
+.section__header p,.hero p{margin-inline:auto}
+.feature,.skill,.card,.price-card,.form-fieldset{transition:transform .35s cubic-bezier(.22,.8,.3,1),box-shadow .35s ease,border-color .3s ease}
+@media(hover:hover){.feature:hover,.skill:hover,.card:hover,.price-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg)}}
+.form-input{transition:border-color .2s ease,box-shadow .25s ease,background-color .2s ease}
+.form-input:focus{border-color:var(--p500);box-shadow:0 0 0 4px color-mix(in srgb,var(--p500) 22%,transparent);outline:none}
+.form-option span{transition:background-color .2s ease,border-color .2s ease,transform .15s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--sh-md)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn[disabled]{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+
+/* ===== قسم حجز الحصة المجانية: متميز بلون وإطار ===== */
+#register{background:linear-gradient(180deg,var(--reg-tint),var(--soft-bg));border-block:4px solid var(--reg-edge);position:relative}
+#register .section__header h2{color:var(--p700)}
+#register .form-wrap{position:relative;background:var(--bg-surface);border:3px solid var(--reg-edge);border-radius:var(--r-xl);box-shadow:0 0 0 8px color-mix(in srgb,var(--reg-edge) 14%,transparent),var(--sh-xl);padding-top:clamp(2.6rem,5vw,3.4rem)}
+#register .form-wrap::before{content:"الحصة المجانية · سجّل بياناتك";position:absolute;top:-17px;right:50%;transform:translateX(50%);background:var(--reg-edge);color:#fff;font-weight:700;font-size:.9rem;padding:.35rem 1.2rem;border-radius:var(--r-full);box-shadow:var(--sh-md);white-space:nowrap}
+#register .form-fieldset{background:color-mix(in srgb,var(--reg-tint) 55%,var(--bg-surface));border:1.5px solid color-mix(in srgb,var(--reg-edge) 35%,var(--border));border-radius:var(--r-lg)}
+#register.flash .form-wrap{animation:regFlash 1.6s ease}
+@keyframes regFlash{0%,100%{box-shadow:0 0 0 8px color-mix(in srgb,var(--reg-edge) 14%,transparent),var(--sh-xl)}40%{box-shadow:0 0 0 16px color-mix(in srgb,var(--reg-edge) 32%,transparent),var(--sh-xl)}}
+.reg-progress{margin-bottom:1.25rem}
+.reg-progress__top{display:flex;justify-content:space-between;font-size:.85rem;font-weight:700;color:var(--p700);margin-bottom:.4rem}
+.reg-progress__bar{height:10px;background:var(--bg-subtle);border-radius:99px;overflow:hidden;border:1px solid var(--border)}
+.reg-progress__bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--p500),var(--s500));border-radius:99px;transition:width .5s cubic-bezier(.22,.8,.3,1)}
+.reg-fab{position:fixed;inset-inline-start:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;opacity:0;pointer-events:none;transform:translateY(14px);transition:opacity .3s ease,transform .3s ease}
+.reg-fab.show{opacity:1;pointer-events:auto;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+<style id="v4">
+/* ===== v4: إطارات هادئة + أبعاد متناسقة + أزرار عائمة أقل ===== */
+.section{padding-block:clamp(2.5rem,6vw,4.5rem)}
+.section__header{margin-block-end:clamp(1.75rem,4.5vw,3rem)}
+.feature{padding:1.25rem 1.35rem;gap:.95rem;cursor:default;-webkit-user-select:text;user-select:text}
+.feature__icon{width:48px;height:48px}
+.skill{padding:.9rem 1rem;cursor:default;-webkit-user-select:text;user-select:text}
+.skill__icon{width:38px;height:38px}
+@media(hover:hover){.feature:hover,.skill:hover,.card:hover,.price-card:hover{transform:translateY(-2px)}}
+.teacher__avatar{overflow:visible;cursor:default}
+.teacher__avatar::before{border-radius:50%/45% 45% 55% 55%}
+
+/* قسم الحجز: إطار واحد ناعم بدل ٤ إطارات متداخلة */
+#register{border-block:0;border-top:1px solid color-mix(in srgb,var(--reg-edge) 22%,transparent);background:linear-gradient(180deg,var(--reg-tint) 0,var(--soft-bg) 100%)}
+#register .section__header{margin-block-end:clamp(1.5rem,4vw,2.25rem)}
+#register .form-wrap{max-width:760px;border:1px solid var(--border);border-top:4px solid var(--reg-edge);border-radius:var(--r-xl);box-shadow:var(--sh-lg);padding:clamp(1rem,3.5vw,2rem)}
+#register .form-wrap::before{content:none}
+#register .form-fieldset,#register fieldset.form-fieldset+fieldset.form-fieldset{display:flow-root;min-width:0;background:color-mix(in srgb,var(--reg-tint) 45%,var(--bg-surface));border:1px solid var(--border);border-radius:var(--r-lg);padding:clamp(1rem,3vw,1.5rem);margin:0 0 1rem;box-shadow:none}
+#register .form-fieldset:hover{transform:none;box-shadow:none}
+#register .form-legend{float:inline-start;width:100%;padding:0;margin:0 0 1.1rem;font-size:1.02rem;gap:.65rem}
+#register .form-legend+*{clear:both}
+#register .form-legend__num{width:28px;height:28px;font-size:.85rem;transition:background-color .25s ease,color .25s ease}
+#register .form-fieldset.done .form-legend__num{background:var(--success);color:#fff;font-size:0}
+#register .form-fieldset.done .form-legend__num::after{content:"✓";font-size:.9rem;line-height:1}
+#register .grid{gap:0 1rem}
+#register .form-group{margin-bottom:1.1rem}
+#register .form-group:last-child{margin-bottom:0}
+#register .form-input{min-height:48px;background:var(--bg-surface)}
+#register input.form-input[readonly]{background:var(--bg-subtle)}
+#register .form-hint{margin-top:.5rem;line-height:1.7}
+#register .days-grid{grid-template-columns:repeat(auto-fill,minmax(92px,1fr))}
+#register .days-grid .form-option{display:block}
+#register .days-grid .form-option span{width:100%;justify-content:center;padding-inline:.4rem}
+#register .time-grid{grid-template-columns:repeat(auto-fill,minmax(92px,1fr))}
+#register .time-period{margin-bottom:1.1rem}
+#register .time-period:last-child{margin-bottom:0}
+#register .time-period__title{display:flex;align-items:center;gap:.4rem;margin-bottom:.6rem}
+#register .form-option span{background:var(--bg-surface)}
+#register .form-option input:checked+span{background:var(--p700)}
+#register .form-options[role="radiogroup"]{display:grid;grid-template-columns:1fr;gap:.6rem}
+@media(min-width:640px){#register .form-options[role="radiogroup"]{grid-template-columns:1fr 1fr}}
+#register .form-options[role="radiogroup"] .form-option{display:block}
+#register .form-options[role="radiogroup"] .form-option span{width:100%;justify-content:flex-start;border-radius:14px;padding:.8rem 1rem;line-height:1.5;min-height:52px}
+#register .form-actions{margin-top:1.5rem;gap:.75rem}
+#register .form-actions .btn{min-width:0;flex:1 1 220px}
+#register #slotSummary:not(:empty),#register .status-box:not(:empty){margin-top:.85rem}
+
+/* شريط تقدم واحد (بدل شريطين) يثبت أعلى الشاشة أثناء التعبئة */
+#register .reg-progress{position:sticky;top:calc(env(safe-area-inset-top,0px) + 8px);z-index:6;margin:0 0 1rem;padding:.55rem .9rem .65rem;background:color-mix(in srgb,var(--bg-surface) 92%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--sh-sm)}
+#register .reg-progress__top{margin-bottom:.35rem}
+#register .reg-progress__bar{height:6px;border:0}
+#register .form-fieldset,#register .form-input,#register .form-group{scroll-margin-top:84px}
+
+/* أزرار عائمة: صغيرة ومتباعدة، وزر حجز واحد فقط */
+.reg-fab{display:none!important}
+.theme-toggle{width:44px;height:44px;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));font-size:1.05rem;border-width:1px;box-shadow:var(--sh-md)}
+.fab{width:52px;height:52px;left:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));box-shadow:var(--sh-lg)}
+.fab svg{width:26px;height:26px}
+.fab::after{display:none}
+.cta-pill{min-height:44px;padding:.5rem 1.25rem;font-size:.92rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));max-width:calc(100% - 9rem);box-shadow:var(--sh-lg)}
+.btn{min-height:48px}.btn--sm{min-height:40px}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></symbol><symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16 9.5"/></symbol><symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6.5C10.5 5.3 8 4.8 4.5 5v12.5c3.5-.2 6 .3 7.5 1.5 1.5-1.2 4-1.7 7.5-1.5V5C16 4.8 13.5 5.3 12 6.5Z"/><path d="M12 6.5V19"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><path d="M3.5 19c.5-3 2.8-4.5 5.5-4.5s5 1.5 5.5 4.5"/><circle cx="17" cy="10" r="2.3"/><path d="M16.5 14.6c2.3 0 3.7 1.3 4 3.4"/></symbol><symbol id="i-repeat" viewBox="0 0 24 24"><path d="M4 11V9a3 3 0 0 1 3-3h11"/><path d="m15 3 3 3-3 3"/><path d="M20 13v2a3 3 0 0 1-3 3H6"/><path d="m9 21-3-3 3-3"/></symbol><symbol id="i-cap" viewBox="0 0 24 24"><path d="m2.5 9.5 9.5-4.5 9.5 4.5-9.5 4.5Z"/><path d="M6.5 11.5V16c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3v-4.5"/><path d="M21.5 9.5V15"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 20V11M12 20V5M19 20v-7"/></symbol><symbol id="i-gem" viewBox="0 0 24 24"><path d="M6.5 4h11l4 5-9.5 11L2.5 9Z"/><path d="M2.5 9h19M9 4l-1.5 5L12 20M15 4l1.5 5L12 20"/></symbol><symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></symbol><symbol id="i-stack" viewBox="0 0 24 24"><rect x="4" y="4" width="4" height="16" rx="1"/><rect x="10" y="4" width="4" height="16" rx="1"/><path d="m16 6 3.8-1 2.2 14-3.8 1Z"/></symbol><symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16" rx="2.5"/><path d="M9 4.5V3.5h6v1M8.5 10h7M8.5 14h7M8.5 17h4"/></symbol><symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3c.6 4.5 2.5 6.4 7 7-4.5.6-6.4 2.5-7 7-.6-4.5-2.5-6.4-7-7 4.5-.6 6.4-2.5 7-7Z"/><path d="M19 17v4M17 19h4"/></symbol><symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M4 20l1.3-4.2A8.5 8.5 0 1 1 8.4 18.8Z"/><path d="M9 8.8c.3 2.6 2.6 5 5.8 6l1.2-1.4-2-1-.9.7c-.8-.4-1.5-1.1-1.9-1.9l.7-.9-1-2Z"/></symbol><symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7.5A2.5 2.5 0 0 0 5 5.5v13A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5V8Z"/><path d="M14 3v5h5M8.5 13h7M8.5 16.5h5"/></symbol><symbol id="i-table" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><path d="M3.5 10h17M3.5 14.5h17M9.5 5v14"/></symbol><symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 8.5-8.5M16 7l2.5 2.5M14 9l2 2"/></symbol><symbol id="i-logout" viewBox="0 0 24 24"><path d="M10 4H6.5A2.5 2.5 0 0 0 4 6.5v11A2.5 2.5 0 0 0 6.5 20H10"/><path d="M15 8l4 4-4 4M19 12H9"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol><symbol id="i-save" viewBox="0 0 24 24"><path d="M5 4h11l3 3v11.5A1.5 1.5 0 0 1 17.5 20h-11A1.5 1.5 0 0 1 5 18.5Z"/><path d="M8 4v5h7V4M8 20v-6h8v6"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></symbol><symbol id="i-folder" viewBox="0 0 24 24"><path d="M3.5 7.5A2.5 2.5 0 0 1 6 5h3.2l2 2.5H18a2.5 2.5 0 0 1 2.5 2.5v7A2.5 2.5 0 0 1 18 19.5H6A2.5 2.5 0 0 1 3.5 17Z"/></symbol><symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20l1-4L16.5 4.5a2.1 2.1 0 0 1 3 3L8 19Z"/><path d="m14.5 6.5 3 3"/></symbol><symbol id="i-trash" viewBox="0 0 24 24"><path d="M4.5 7h15M9 7V4.5h6V7M6.5 7l.8 12a2 2 0 0 0 2 1.8h5.4a2 2 0 0 0 2-1.8l.8-12"/><path d="M10 11v6M14 11v6"/></symbol><symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V3.5M8 7l4-3.5L16 7"/><path d="M7 11H6a2 2 0 0 0-2 2v5.5A2 2 0 0 0 6 20.5h12a2 2 0 0 0 2-2V13a2 2 0 0 0-2-2h-1"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="3"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/><path d="M17 3.5v3M15.5 5h3"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.8v2.2M12 19v2.2M2.8 12H5M19 12h2.2M5.5 5.5 7 7M17 17l1.5 1.5M18.5 5.5 17 7M7 17l-1.5 1.5"/></symbol><symbol id="i-sunrise" viewBox="0 0 24 24"><path d="M6.5 17a5.5 5.5 0 0 1 11 0M2.5 20.5h19M12 4v4M5 9l1.6 1.6M19 9l-1.6 1.6"/></symbol></defs></svg>
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي" title="الوضع الليلي/الفاتح">🌙</button>
@@ -322,7 +476,7 @@ input[readonly].form-input{background:var(--bg-subtle);cursor:default;font-weigh
       <h1>برنامج إتقان لتحفيظ القرآن الكريم وتجويده أونلاين</h1>
       <p>رحلة إيمانية متكاملة لحفظ كتاب الله تعالى وإتقان تلاوته، عبر حصص مباشرة أونلاين من بيتك، مع متابعة مستمرة وتقارير دورية لأولياء الأمور، وأسلوب مبسط يناسب كل المستويات.</p>
       <div class="hero__actions">
-        <a href="#register" class="btn btn--light">🎯 احجز حصتك المجانية</a>
+        <a href="#register" class="btn btn--light"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span>احجز حصتك المجانية</a>
         <a href="#teacher" class="btn btn--outline-light">تعرّف على المعلم</a>
       </div>
       <div class="hero__stats">
@@ -341,15 +495,15 @@ input[readonly].form-input{background:var(--bg-subtle);cursor:default;font-weigh
       </div>
       <div class="grid grid--3">
         <div class="feature">
-          <div class="feature__icon">🎯</div>
+          <div class="feature__icon gc0"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></div>
           <div><div class="feature__title">١. احجز حصة مجانية</div><div class="feature__desc">املأ نموذج الحجز بخطوات بسيطة، وسيتواصل معك المعلم.</div></div>
         </div>
         <div class="feature">
-          <div class="feature__icon">💻</div>
+          <div class="feature__icon gc1"><svg class="ic" aria-hidden="true"><use href="#i-laptop"/></svg></div>
           <div><div class="feature__title">٢. جرّب الحصة أونلاين</div><div class="feature__desc">حصة مباشرة عبر الإنترنت من بيتك، بلا سفر ولا مواصلات.</div></div>
         </div>
         <div class="feature">
-          <div class="feature__icon">✅</div>
+          <div class="feature__icon gc2"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></div>
           <div><div class="feature__title">٣. أكمل مع المعلم</div><div class="feature__desc">إن ناسبتك الحصة تكمل معنا، والحفظ والمتابعة كلها أونلاين.</div></div>
         </div>
       </div>
@@ -364,27 +518,27 @@ input[readonly].form-input{background:var(--bg-subtle);cursor:default;font-weigh
       </div>
       <div class="grid grid--3">
         <div class="feature animate-in">
-          <div class="feature__icon">📖</div>
+          <div class="feature__icon gc3"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></div>
           <div><div class="feature__title">حفظ ومراجعة</div><div class="feature__desc">يساعد الطالب على الحفظ والمراجعة مع متابعة مستمرة لكل خطوة في رحلته.</div></div>
         </div>
         <div class="feature animate-in" style="animation-delay:.1s">
-          <div class="feature__icon">👨‍👩‍👦</div>
+          <div class="feature__icon gc4"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></div>
           <div><div class="feature__title">متابعة ذكية لأولياء الأمور</div><div class="feature__desc">تقارير دورية يومية وأسبوعية وشهرية تُرسل لولي الأمر ليطمئن على مستوى ابنه.</div></div>
         </div>
         <div class="feature animate-in" style="animation-delay:.2s">
-          <div class="feature__icon">🔁</div>
+          <div class="feature__icon gc0"><svg class="ic" aria-hidden="true"><use href="#i-repeat"/></svg></div>
           <div><div class="feature__title">الجديد + الماضي</div><div class="feature__desc">نهتم بالحفظ الجديد، لكن الأهم عندنا التأكد من ثبات الماضي ومراجعته باستمرار.</div></div>
         </div>
         <div class="feature animate-in" style="animation-delay:.3s">
-          <div class="feature__icon">🎓</div>
+          <div class="feature__icon gc1"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg></div>
           <div><div class="feature__title">تجويد مبسّط</div><div class="feature__desc">شرح أحكام التجويد بأسلوب مبسّط وميسّر يناسب مستوى كل طالب.</div></div>
         </div>
         <div class="feature animate-in" style="animation-delay:.4s">
-          <div class="feature__icon">📊</div>
+          <div class="feature__icon gc2"><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg></div>
           <div><div class="feature__title">نظام منظم وممتع</div><div class="feature__desc">نظام ممتع ومنظم لمتابعة تقدم الطالب أولًا بأول بشكل واضح ومحفّز.</div></div>
         </div>
         <div class="feature animate-in" style="animation-delay:.5s">
-          <div class="feature__icon">💎</div>
+          <div class="feature__icon gc3"><svg class="ic" aria-hidden="true"><use href="#i-gem"/></svg></div>
           <div><div class="feature__title">تأسيس النطق الصحيح</div><div class="feature__desc">تأسيس النطق الصحيح للحروف من البداية، وتصحيح التلاوة ومعالجة أخطاء الحفظ.</div></div>
         </div>
       </div>
@@ -395,27 +549,67 @@ input[readonly].form-input{background:var(--bg-subtle);cursor:default;font-weigh
     <div class="container">
       <div class="section__header"><h2>تعرّف على المعلم</h2></div>
       <div class="teacher">
-        <div class="teacher__avatar-wrap"><div class="teacher__avatar">ع</div></div>
+        <div class="teacher__avatar-wrap"><div class="teacher__avatar"><span style="position:relative;z-index:1">ع</span></div></div>
         <div>
           <h3 class="teacher__name">الأستاذ عبدالقادر عبدالله</h3>
           <div class="teacher__title">معلم القرآن الكريم والتجويد</div>
           <p class="teacher__desc">
-            معلّم متخصص في تعليم القرآن الكريم والتجويد، خريج كلية التربية بجامعة الأزهر، ويدرس حاليًا الدبلوم الخاص (الماجستير) في المناهج وطرق التدريس بجامعة الأزهر. يجمع بين التأهيل التربوي الأكاديمي والخبرة العملية في تدريس القرآن، ويؤمن بأن بناء الطالب لا يقتصر على الحفظ الجديد، بل يمتد إلى تثبيت الماضي ومراجعته باستمرار، مع شرح مبسّط لأحكام التجويد ومتابعة دقيقة لكل طالب على حدة.
+            معلّم متخصص في تعليم القرآن الكريم والتجويد، خريج كلية التربية بجامعة الأزهر، ويدرس حاليًا في مرحلة التأهيل للماجستير (الدبلوم الخاص) بتخصص المناهج وطرق التدريس بجامعة الأزهر. يجمع بين التأهيل التربوي الأكاديمي والخبرة العملية في تدريس القرآن، ويؤمن بأن بناء الطالب لا يقتصر على الحفظ الجديد، بل يمتد إلى تثبيت الماضي ومراجعته باستمرار، مع شرح مبسّط لأحكام التجويد ومتابعة دقيقة لكل طالب على حدة.
           </p>
           <div class="teacher__skills">
-            <div class="skill"><div class="skill__icon">🎓</div><div><div class="skill__title">خلفية أكاديمية</div><div class="skill__desc">كلية التربية — جامعة الأزهر + دبلوم خاص (ماجستير) في المناهج وطرق التدريس</div></div></div>
-            <div class="skill"><div class="skill__icon">🗣️</div><div><div class="skill__title">تأسيس النطق الصحيح</div><div class="skill__desc">تأسيس النطق الصحيح للحروف من البداية</div></div></div>
-            <div class="skill"><div class="skill__icon">📚</div><div><div class="skill__title">خطط مراجعة منظمة</div><div class="skill__desc">وضع خطط مراجعة منظمة للمحفوظ القديم</div></div></div>
-            <div class="skill"><div class="skill__icon">🎯</div><div><div class="skill__title">تصحيح التلاوة</div><div class="skill__desc">معالجة أخطاء الحفظ والنسيان بشكل منهجي</div></div></div>
-            <div class="skill"><div class="skill__icon">📝</div><div><div class="skill__title">تقارير دورية</div><div class="skill__desc">إعداد تقارير يومية وأسبوعية وشهرية لأولياء الأمور</div></div></div>
-            <div class="skill"><div class="skill__icon">✨</div><div><div class="skill__title">تجويد مبسّط</div><div class="skill__desc">شرح أحكام التجويد بأسلوب مبسّط وميسّر</div></div></div>
+            <div class="skill"><div class="skill__icon gc4"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg></div><div><div class="skill__title">خلفية أكاديمية</div><div class="skill__desc">كلية التربية — جامعة الأزهر، وحاليًا في مرحلة التأهيل للماجستير (الدبلوم الخاص) في المناهج وطرق التدريس</div></div></div>
+            <div class="skill"><div class="skill__icon gc0"><svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg></div><div><div class="skill__title">تأسيس النطق الصحيح</div><div class="skill__desc">تأسيس النطق الصحيح للحروف من البداية</div></div></div>
+            <div class="skill"><div class="skill__icon gc1"><svg class="ic" aria-hidden="true"><use href="#i-stack"/></svg></div><div><div class="skill__title">خطط مراجعة منظمة</div><div class="skill__desc">وضع خطط مراجعة منظمة للمحفوظ القديم</div></div></div>
+            <div class="skill"><div class="skill__icon gc2"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></div><div><div class="skill__title">تصحيح التلاوة</div><div class="skill__desc">معالجة أخطاء الحفظ والنسيان بشكل منهجي</div></div></div>
+            <div class="skill"><div class="skill__icon gc3"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg></div><div><div class="skill__title">تقارير دورية</div><div class="skill__desc">إعداد تقارير يومية وأسبوعية وشهرية لأولياء الأمور</div></div></div>
+            <div class="skill"><div class="skill__icon gc4"><svg class="ic" aria-hidden="true"><use href="#i-sparkle"/></svg></div><div><div class="skill__title">تجويد مبسّط</div><div class="skill__desc">شرح أحكام التجويد بأسلوب مبسّط وميسّر</div></div></div>
           </div>
+          <div style="margin-top:1.75rem"><a href="#register" class="btn btn--primary"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span>احجز حصة مجانية مع الأستاذ</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="register">
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section__header">
+        <h2>قيمة الحصة</h2>
+        <p>أسعار واضحة وبسيطة، بلا رسوم خفية ولا اشتراكات معقدة.</p>
+      </div>
+      <div style="max-width:760px;margin-inline:auto;">
+        <div class="card" style="height:auto;text-align:center;">
+          <span style="display:inline-block;padding:.35rem 1rem;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--p700);font-weight:700;font-size:.9rem;">الفترة الحالية · عدد المقاعد محدود</span>
+          <div style="margin-top:1.25rem;">
+            <div class="feature__desc">سعر الحصة الواحدة</div>
+            <div style="font-size:2.4rem;font-weight:800;color:var(--p700);line-height:1.2;">50 <span style="font-size:1.1rem;">جنيهًا مصريًا</span></div>
+          </div>
+          <p class="feature__desc" style="margin:1.25rem 0 .75rem;">اختر النظام الأسبوعي الذي يناسبك:</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;text-align:center;">
+            <div style="padding:1.5rem 1rem;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--bg-surface);">
+              <div class="feature__desc" style="font-weight:700;">الحد الأدنى</div>
+              <div class="feature__title" style="margin-top:.25rem;">حصتان أسبوعيًا</div>
+              <div style="font-size:2.2rem;font-weight:800;color:var(--p700);line-height:1.2;margin:.5rem 0 .2rem;">100 <span style="font-size:1.05rem;">جنيه</span></div>
+              <div class="feature__desc">2 × 50 جنيهًا، ونبدأ بها لمن يفضّل وتيرة أهدأ.</div>
+            </div>
+            <div style="padding:1.5rem 1rem;border:2px solid var(--s500);border-radius:var(--r-lg);background:var(--bg-surface);">
+              <div class="feature__desc" style="font-weight:700;color:var(--p700);">★ الأنسب</div>
+              <div class="feature__title" style="margin-top:.25rem;">3 حصص أسبوعيًا</div>
+              <div style="font-size:2.2rem;font-weight:800;color:var(--p700);line-height:1.2;margin:.5rem 0 .2rem;">150 <span style="font-size:1.05rem;">جنيهًا</span></div>
+              <div class="feature__desc">3 × 50 جنيهًا، بمواعيد ثابتة واستمرارية أفضل في الحفظ والمراجعة.</div>
+            </div>
+          </div>
+          <div style="margin-top:1.5rem;padding:1.1rem 1.25rem;border-radius:var(--r-md);background:var(--bg-subtle);border-right:3px solid var(--s500);text-align:right;">
+            <div class="feature__title" style="margin-bottom:.3rem;">لكل فترة سعرها وعدد مقاعدها</div>
+            <div class="feature__desc">نستقبل الطلاب على فترات منظمة، ولكل فترة عدد محدود من المقاعد وسعر خاص بها. عند اكتمال العدد تُغلق الفترة، وتبدأ مرحلة جديدة بأسعارها وعدد مقاعدها. لذلك نوصي بالحجز مبكرًا لتثبيت سعر الفترة الحالية وضمان مكانك.</div>
+          </div>
+          <div class="feature__desc" style="margin-top:1rem;">الحصة الأولى تجريبية مجانية، وتختار النظام المناسب لك أثناء الحجز.</div>
+          <div style="margin-top:1.25rem"><a href="#register" class="btn btn--primary"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span>احجز قبل اكتمال العدد</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="register">
     <div class="container">
       <div class="section__header">
         <h2>احجز حصتك المجانية</h2>
@@ -432,7 +626,7 @@ input[readonly].form-input{background:var(--bg-subtle);cursor:default;font-weigh
           <div class="grid grid--2">
             <div class="form-group">
               <label class="form-label" for="regAge">السن <span class="req">*</span></label>
-              <input type="number" id="regAge" class="form-input" required min="4" max="100" placeholder="من 4 إلى 100">
+              <input type="text" inputmode="numeric" maxlength="3" id="regAge" class="form-input" required autocomplete="off" placeholder="من 4 إلى 100">
               <div class="form-error" id="errAge"></div>
             </div>
             <div class="form-group">
@@ -445,6 +639,11 @@ input[readonly].form-input{background:var(--bg-subtle);cursor:default;font-weigh
             <label class="form-label" for="regGuardianPhone">رقم ولي الأمر <span class="req">*</span></label>
             <input type="tel" id="regGuardianPhone" class="form-input" required autocomplete="tel" placeholder="01012345678">
             <div class="form-error" id="errGuardianPhone"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="regAddress">عنوان الطالب <span class="req">*</span></label>
+            <input type="text" id="regAddress" class="form-input" required autocomplete="street-address" maxlength="200" placeholder="الدولة / المحافظة، المدينة، الحي">
+            <div class="form-error" id="errAddress"></div>
           </div>
           <div class="form-group">
             <span class="form-label">النوع</span>
@@ -484,10 +683,19 @@ input[readonly].form-input{background:var(--bg-subtle);cursor:default;font-weigh
         </fieldset>
 
         <fieldset class="form-fieldset">
-          <legend class="form-legend"><span class="form-legend__num">3</span> تاريخ الحجز والمواعيد المناسبة</legend>
+          <legend class="form-legend"><span class="form-legend__num">3</span> اختيار النظام الأسبوعي</legend>
+          <p class="form-hint" style="margin-top:0;margin-bottom:.75rem;">سعر الحصة 50 جنيهًا مصريًا. الحد الأدنى حصتان أسبوعيًا، والأنسب 3 حصص. هذا الاختيار غير ملزم، ويمكن تعديله بعد الحصة التجريبية.</p>
+          <div class="form-options" role="radiogroup" aria-label="النظام الأسبوعي">
+            <label class="form-option"><input type="radio" name="plan" value="حصتان أسبوعيًا — 100 جنيه (الحد الأدنى)"><span>حصتان أسبوعيًا — 100 جنيه</span></label>
+            <label class="form-option"><input type="radio" name="plan" value="3 حصص أسبوعيًا — 150 جنيهًا (الأنسب)" checked><span>3 حصص أسبوعيًا — 150 جنيهًا ★ الأنسب</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-fieldset">
+          <legend class="form-legend"><span class="form-legend__num">4</span> تاريخ الحجز والمواعيد المناسبة</legend>
           <div class="form-group">
             <label class="form-label" for="regDate">تاريخ حجز الحصة المجانية</label>
-            <input type="text" id="regDate" class="form-input" readonly required aria-describedby="regDateHint">
+            <input type="text" id="regDate" class="form-input" readonly required tabindex="-1" aria-readonly="true" autocomplete="off" style="cursor:default;background:var(--bg-subtle);font-weight:700;" aria-describedby="regDateHint">
             <p class="form-hint" id="regDateHint">هذا هو تاريخ اليوم، أي اليوم الذي تحجز فيه الحصة الآن من خلال الموقع. يُكتب تلقائيًا ولا تحتاج لتغييره.</p>
             <div class="form-error" id="errDate"></div>
           </div>
@@ -537,12 +745,12 @@ input[readonly].form-input{background:var(--bg-subtle);cursor:default;font-weigh
         </fieldset>
 
         <div class="form-actions">
-          <button type="submit" class="btn btn--wa">📱 إرسال التفاصيل على واتساب</button>
-          <button type="button" class="btn btn--primary" data-act="word">📄 تحميل ملف Word على الجهاز</button>
+          <button type="submit" class="btn btn--wa"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>إرسال التفاصيل على واتساب</button>
+          <button type="button" class="btn btn--primary" data-act="word"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span>تحميل ملف Word على الجهاز</button>
         </div>
         <p id="regActionStatus" class="form-hint status-box" role="status" aria-live="polite" style="margin-top:1rem;"></p>
         <div style="margin-top:.5rem;text-align:center;">
-          <button type="button" class="btn btn--outline btn--sm" id="btnPreviewReg">👁️ معاينة البيانات قبل الإرسال</button>
+          <button type="button" class="btn btn--outline btn--sm" id="btnPreviewReg"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg></span>معاينة البيانات قبل الإرسال</button>
         </div>
       </form>
     </div>
@@ -673,6 +881,13 @@ const Validator = {
     if (c.startsWith('01')) return 'الرقم يبدأ بـ 010 / 011 / 012 / 015';
     return 'رقم غير صحيح';
   },
+  address(v) {
+    const t = v.trim().replace(/\s+/g, ' ');
+    if (!t) return 'أدخل عنوان الطالب';
+    if (t.length < 6) return 'اكتب العنوان بشكل أوضح (المحافظة والمدينة والحي)';
+    if (t.length > 200) return 'العنوان طويل جدًا';
+    return null;
+  },
   guardianPhone(v) {
     if (!v.trim()) return 'أدخل رقم ولي الأمر';
     return Validator.phone(v);
@@ -704,6 +919,7 @@ const PublicForm = {
     const v3 = applyValidation($('#regPhone'), $('#errPhone'), Validator.phone);
     const v6 = applyValidation($('#regGuardianPhone'), $('#errGuardianPhone'), Validator.guardianPhone);
     const v7 = applyValidation($('#regDate'), $('#errDate'), Validator.date);
+    const v9 = applyValidation($('#regAddress'), $('#errAddress'), Validator.address);
     const juz = $('#regJuz');
     let v4 = true;
     const errJuz = $('#errJuz');
@@ -736,7 +952,7 @@ const PublicForm = {
     } else {
       errTimes.classList.remove('visible');
     }
-    return v1 && v2 && v3 && v4 && v5 && v6 && v7 && v8;
+    return v1 && v2 && v3 && v4 && v5 && v6 && v7 && v8 && v9;
   },
   getData() {
     const gender = $('input[name="gender"]:checked');
@@ -747,10 +963,12 @@ const PublicForm = {
       age: $('#regAge').value.trim(),
       phone: $('#regPhone').value.trim(),
       guardianPhone: $('#regGuardianPhone').value.trim(),
+      address: $('#regAddress').value.trim().replace(/\s+/g, ' '),
       date: toISO(new Date()),
       gender: gender ? gender.value : '—',
       juz: $('#regJuz').value,
       level: level ? level.value : '—',
+      plan: ($('input[name="plan"]:checked') || {}).value || '—',
       days,
       times: $$('input[name="times"]:checked').map(c => c.value)
     };
@@ -908,7 +1126,8 @@ const DocxEngine = {
       shading: { fill: '2D5A4A' }, children: [this.run(text, { bold: true, color: 'FFFFFF', size: 26 })]
     });
   },
-  pageProps() { return { margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } }; },
+  pageProps() { return { margin: { top: 1134, right: 1000, bottom: 1134, left: 1000 } }; },
+  CONTENT_W: 9906,
   docStyles() {
     return { default: { document: { run: { font: 'Arial', size: 24, rightToLeft: true, language: { value: 'ar-SA' } }, paragraph: { bidirectional: true } } } };
   },
@@ -950,9 +1169,10 @@ const DocxEngine = {
     return [
       { title: 'البيانات الأساسية', rows: [
         ['الاسم:', d.name], ['السن:', d.age + ' سنة'], ['رقم الواتساب:', d.phone],
-        ['رقم ولي الأمر:', d.guardianPhone], ['النوع:', d.gender] ] },
+        ['رقم ولي الأمر:', d.guardianPhone], ['عنوان الطالب:', d.address || '—'], ['النوع:', d.gender] ] },
       { title: 'مستوى الحفظ', rows: [
         ['عدد الأجزاء المحفوظة:', d.juz], ['مستوى القراءة:', d.level] ] },
+      { title: 'النظام الأسبوعي المختار', rows: [ ['النظام:', d.plan || '—'] ] },
       { title: 'تاريخ الحجز والمواعيد المناسبة', rows: [
         ['تاريخ حجز الحصة المجانية:', d.date ? formatDateAr(d.date) : '—'],
         ['الأيام المفضلة:', d.days.length ? d.days.join('، ') : '—'],
@@ -1084,7 +1304,8 @@ const Auth = {
   }
 };
 
-const buildRegMsg = (d) => (
+const rtlMsg = (t) => String(t).split('\n').map(l => l ? '\u200F' + l : l).join('\n');
+const buildRegMsg = (d) => rtlMsg(
 `السلام عليكم ورحمة الله وبركاته\n` +
       `أرغب في حجز حصة مجانية (أونلاين).\n\n` +
       `*البيانات الأساسية:*\n` +
@@ -1092,10 +1313,13 @@ const buildRegMsg = (d) => (
       `• السن: ${d.age}\n` +
       `• الواتساب: ${d.phone}\n` +
       `• رقم ولي الأمر: ${d.guardianPhone}\n` +
+      `• العنوان: ${d.address}\n` +
       `• النوع: ${d.gender}\n\n` +
       `*مستوى الحفظ:*\n` +
       `• الأجزاء: ${d.juz}\n` +
       `• المستوى: ${d.level}\n\n` +
+      `*النظام الأسبوعي المختار:*\n` +
+      `• ${d.plan}\n\n` +
       `*تاريخ حجز الحصة المجانية:*\n` +
       `• تاريخ اليوم الذي تم فيه الحجز: ${formatDateAr(d.date)}\n\n` +
       `*الأيام المفضلة:*\n` +
@@ -1112,6 +1336,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   $('#regName')?.addEventListener('input', debounce(e => applyValidation(e.target, $('#errName'), Validator.name), 250));
   $('#regAge')?.addEventListener('input', debounce(e => applyValidation(e.target, $('#errAge'), Validator.age), 250));
   $('#regPhone')?.addEventListener('input', debounce(e => applyValidation(e.target, $('#errPhone'), Validator.phone), 250));
+  $('#regAddress')?.addEventListener('input', debounce(e => applyValidation(e.target, $('#errAddress'), Validator.address), 250));
   $('#regGuardianPhone')?.addEventListener('input', debounce(e => applyValidation(e.target, $('#errGuardianPhone'), Validator.guardianPhone), 250));
   /* تاريخ حجز الحصة = تاريخ اليوم، يُكتب تلقائيًا ويُحدَّث إن بقيت الصفحة مفتوحة حتى اليوم التالي */
   const dateEl = $('#regDate');
@@ -1124,6 +1349,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     dateEl.value = txt;
   };
   syncToday();
+  dateEl?.addEventListener('focus', () => dateEl.blur());
+  setInterval(syncToday, 60000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) syncToday(); });
   $('#regJuz')?.addEventListener('change', function () {
     if (this.value) { $('#errJuz').classList.remove('visible'); this.classList.remove('is-invalid'); }
@@ -1153,14 +1380,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     const bar = document.createElement('div'); bar.className = 'scroll-bar'; bar.innerHTML = '<i></i>';
     document.body.appendChild(bar);
     const barI = bar.firstChild;
-    const onScroll = () => {
+    let sraf = 0;
+    const paint = () => {
+      sraf = 0;
       const h = document.documentElement.scrollHeight - innerHeight;
-      barI.style.width = (h > 0 ? Math.min(100, scrollY / h * 100) : 0) + '%';
+      barI.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, scrollY / h) : 0) + ')';
     };
+    const onScroll = () => { if (!sraf) sraf = requestAnimationFrame(paint); };
     addEventListener('scroll', onScroll, { passive: true }); onScroll();
     if (reduce || !('IntersectionObserver' in window)) return;
     /* ظهور تدريجي للعناصر عند الوصول لها */
-    const targets = $$('#view-public .section__header, #view-public .feature, #view-public .teacher__avatar-wrap, #view-public .teacher__name, #view-public .teacher__title, #view-public .teacher__desc, #view-public .skill, #view-public .form-fieldset, #view-public .form-actions');
+    const targets = $$('#view-public .section__header, #view-public .feature, #view-public .teacher__avatar-wrap, #view-public .teacher__name, #view-public .teacher__title, #view-public .teacher__desc, #view-public .skill');
     document.documentElement.classList.add('js-motion');
     targets.forEach((el) => {
       el.classList.remove('animate-in');
@@ -1170,6 +1400,42 @@ document.addEventListener('DOMContentLoaded', async () => {
       ents.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
     }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
     targets.forEach((el) => io.observe(el));
+  })();
+
+
+  /* ---- شريط تقدم تعبئة النموذج + زر عائم + تمييز القسم عند الوصول ---- */
+  (function regExtras() {
+    const form = $('#regForm'), reg = $('#register');
+    if (!form || !reg) return;
+    const bar = document.createElement('div');
+    bar.className = 'reg-progress';
+    bar.innerHTML = '<div class="reg-progress__top"><span>تقدّم تعبئة الطلب</span><span id="regPct">0%</span></div><div class="reg-progress__bar"><i></i></div>';
+    form.insertBefore(bar, form.firstChild);
+    const fill = bar.querySelector('i'), pct = bar.querySelector('#regPct');
+    const sets = Array.from(form.querySelectorAll('.form-fieldset'));
+    const mark = (i, v) => { if (sets[i]) sets[i].classList.toggle('done', !!v); };
+    const update = () => {
+      const ok = [
+        $('#regName').value.trim().length > 1, !!$('#regAge').value, !!$('#regPhone').value.trim(),
+        !!$('#regGuardianPhone').value.trim(), !!$('#regAddress').value.trim(), !!$('#regJuz').value,
+        $$('input[name="days"]:checked').length > 0, $$('input[name="times"]:checked').length > 0
+      ];
+      const n = ok.filter(Boolean).length, p = Math.round(n / ok.length * 100);
+      fill.style.width = p + '%'; pct.textContent = p + '%';
+      mark(0, ok.slice(0, 5).every(Boolean)); mark(1, ok[5]);
+      mark(2, !!$('input[name="plan"]:checked')); mark(3, ok[6] && ok[7]);
+      form.classList.toggle('is-ready', n === ok.length);
+    };
+    form.addEventListener('input', update); form.addEventListener('change', update); update();
+    /* الأرقام العربية (٠١٢...) تتحول تلقائيًا لإنجليزية في الهاتف والسن */
+    const AR = '٠١٢٣٤٥٦٧٨٩', FA = '۰۱۲۳۴۵۶۷۸۹';
+    const norm = (t) => t.replace(/[٠-٩۰-۹]/g, (c) => String(AR.indexOf(c) > -1 ? AR.indexOf(c) : FA.indexOf(c)));
+    ['#regPhone', '#regGuardianPhone'].forEach((sel) => {
+      const el = $(sel); if (!el) return;
+      el.addEventListener('input', () => { const v = norm(el.value); if (v !== el.value) el.value = v; });
+    });
+    const ageEl = $('#regAge');
+    if (ageEl) ageEl.addEventListener('input', () => { const v = norm(ageEl.value).replace(/\D/g, ''); if (v !== ageEl.value) ageEl.value = v; });
   })();
 
   /* فتح رابط في تبويب جديد (window.open مع noopener يرجع null دائمًا فكان يغيّر الصفحة الحالية) */
@@ -1199,7 +1465,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const readyDoc = () => (_built && _builtKey === curKey()) ? _built : null;
   const warmUp = debounce(() => {
     const d = PublicForm.getData();
-    if (d.name && d.age && d.phone && d.guardianPhone && d.juz && d.days.length && d.times.length) prepareDoc();
+    if (d.name && d.age && d.phone && d.guardianPhone && d.address && d.juz && d.days.length && d.times.length) prepareDoc();
   }, 600);
   $('#regForm')?.addEventListener('input', warmUp);
   $('#regForm')?.addEventListener('change', warmUp);
@@ -1250,11 +1516,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   prevModal?.addEventListener('click', (e) => { if (e.target === prevModal) closePrev(); });
 
   /* ---- الخيارات الثلاثة ---- */
-  let _busy = false;
+  let _busy = false, _waLock = false;
   const actions = {
     /* 1) إرسال التفاصيل كرسالة على واتساب المعلم */
     wa() {
-      if (!validateOrStop()) return;
+      if (_waLock || !validateOrStop()) return;
+      _waLock = true; setTimeout(() => { _waLock = false; }, 3000);
       openLink(waUrl());
       showToast('تم فتح واتساب، اضغط إرسال هناك', 'success');
       setStatus('تم فتح واتساب على رقم المعلم برسالة فيها كل بياناتك. اضغط «إرسال» هناك.');
@@ -1295,7 +1562,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         <div class="form-group"><label class="form-label" for="cpNew2">تأكيد الرمز الجديد</label><input type="password" id="cpNew2" class="form-input" autocomplete="off"></div>
         <div class="form-error" id="cpErr"></div>
         <div class="form-actions" style="margin-top:1rem;">
-          <button type="submit" class="btn btn--primary" id="cpSave">💾 حفظ</button>
+          <button type="submit" class="btn btn--primary" id="cpSave"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-save"/></svg></span>حفظ</button>
           <button type="button" class="btn btn--secondary" id="cpCancel">إلغاء</button>
         </div>
       </form>
@@ -1316,7 +1583,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const btn = $('#cpSave'); btn.disabled = true; btn.textContent = 'جارٍ الحفظ…';
     try { await Auth.changePassword(o, n); cpClose(); showToast('تم تغيير الرمز وإعادة تشفير البيانات', 'success'); }
     catch (err) { fail(err.message || 'تعذر تغيير الرمز'); }
-    finally { btn.disabled = false; btn.textContent = '💾 حفظ'; }
+    finally { btn.disabled = false; btn.innerHTML = '<span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-save"/></svg></span>حفظ'; }
   });
 
   /* تحميل مكتبة Word مبكرًا عند أول تفاعل مع النموذج فقط (لتسريع الصفحة لبقية الزوار) */
@@ -1337,10 +1604,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       <div class="container dash-nav">
         <h2 style="margin:0;font-size:1.15rem;">لوحة التحكم</h2>
         <div class="export-group">
-          <button class="btn btn--sm btn--secondary" id="btnExportWord">📄 Word</button>
-          <button class="btn btn--sm btn--excel" id="btnExportExcel">📊 Excel</button>
-          <button class="btn btn--sm btn--outline" id="btnChangePass">🔑 الرمز</button>
-          <button class="btn btn--sm btn--outline" id="btnLogout">🚪 خروج</button>
+          <button class="btn btn--sm btn--secondary" id="btnExportWord"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span>Word</button>
+          <button class="btn btn--sm btn--excel" id="btnExportExcel"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-table"/></svg></span>Excel</button>
+          <button class="btn btn--sm btn--outline" id="btnChangePass"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-key"/></svg></span>الرمز</button>
+          <button class="btn btn--sm btn--outline" id="btnLogout"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-logout"/></svg></span>خروج</button>
         </div>
       </div>
     </header>
@@ -1353,7 +1620,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       <div id="tab-students">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:.75rem;">
           <h3 style="margin:0;">قائمة الطلاب</h3>
-          <button class="btn btn--primary btn--sm" id="btnAddStudent">➕ إضافة طالب</button>
+          <button class="btn btn--primary btn--sm" id="btnAddStudent"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></span>إضافة طالب</button>
         </div>
         <div class="search-bar">
           <input type="search" id="searchStudents" placeholder="🔍 ابحث بالاسم أو رقم التليفون...">
@@ -1382,8 +1649,8 @@ document.addEventListener('DOMContentLoaded', async () => {
           <h2 style="margin:0;font-size:1.1rem;" id="studentHeaderName">ملف الطالب</h2>
         </div>
         <div class="export-group">
-          <button class="btn btn--sm btn--primary" id="btnPreviewReport">📋 معاينة تقرير</button>
-          <button class="btn btn--sm btn--secondary" id="btnAddLessonToStudent">➕ تسجيل حصة</button>
+          <button class="btn btn--sm btn--primary" id="btnPreviewReport"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg></span>معاينة تقرير</button>
+          <button class="btn btn--sm btn--secondary" id="btnAddLessonToStudent"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></span>تسجيل حصة</button>
         </div>
       </div>
     </header>
@@ -1453,7 +1720,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <textarea id="addNotes" class="form-input" rows="2" placeholder="ملاحظات عن الطالب..."></textarea>
         </div>
         <div style="display:flex;gap:.75rem;margin-top:1.75rem;">
-          <button type="submit" class="btn btn--primary" style="flex:1;">💾 حفظ</button>
+          <button type="submit" class="btn btn--primary" style="flex:1;"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-save"/></svg></span>حفظ</button>
           <button type="button" class="btn btn--outline" style="flex:1;" data-close="addStudent">إلغاء</button>
         </div>
       </form>
@@ -1557,7 +1824,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         </div>
 
         <div style="display:flex;gap:.75rem;margin-top:1.75rem;">
-          <button type="submit" class="btn btn--primary" style="flex:1;">💾 حفظ الحصة</button>
+          <button type="submit" class="btn btn--primary" style="flex:1;"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-save"/></svg></span>حفظ الحصة</button>
           <button type="button" class="btn btn--outline" style="flex:1;" data-close="addLesson">إلغاء</button>
         </div>
       </form>
@@ -1575,8 +1842,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         <input type="checkbox" id="regPrevConfirm"><span>أؤكد أن بياناتي صحيحة</span>
       </label>
       <div class="form-actions" style="margin-top:1rem;">
-        <button type="button" class="btn btn--wa" data-act="wa" disabled>📱 إرسال على واتساب</button>
-        <button type="button" class="btn btn--primary" data-act="word" disabled>📄 تحميل ملف Word</button>
+        <button type="button" class="btn btn--wa" data-act="wa" disabled><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>إرسال على واتساب</button>
+        <button type="button" class="btn btn--primary" data-act="word" disabled><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span>تحميل ملف Word</button>
         <button type="button" class="btn btn--secondary" id="btnRegEdit">✏️ تعديل البيانات</button>
       </div>
       <p id="regShareStatus" class="status-box" role="status" aria-live="polite" style="margin-top:.75rem;"></p>
@@ -1603,11 +1870,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       </div>
       <div id="previewBody" style="background:var(--bg-subtle);border-radius:var(--r-md);padding:1rem;max-height:55vh;overflow:auto;margin-bottom:1rem;"></div>
       <div style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:flex-end;">
-        <button class="btn btn--outline" id="btnSavePreview">💾 حفظ التعديلات</button>
-        <button class="btn btn--primary" id="btnPreviewWord">📄 Word</button>
-        <button class="btn btn--excel" id="btnPreviewExcel">📊 Excel</button>
+        <button class="btn btn--outline" id="btnSavePreview"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-save"/></svg></span>حفظ التعديلات</button>
+        <button class="btn btn--primary" id="btnPreviewWord"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg></span>Word</button>
+        <button class="btn btn--excel" id="btnPreviewExcel"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-table"/></svg></span>Excel</button>
         <button class="btn btn--wa" id="btnPreviewShare">📤 مشاركة الملف</button>
-        <button class="btn btn--wa" id="btnPreviewWa">📱 واتساب (نص)</button>
+        <button class="btn btn--wa" id="btnPreviewWa"><span class="bi"><svg class="ic" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>واتساب (نص)</button>
       </div>
     </div>
   </div>
@@ -1660,7 +1927,7 @@ App.Dashboard.renderReminders = function () {
   });
   if (!reminders.length) {
     box.innerHTML = `<div class="reminder" style="background:color-mix(in srgb,var(--success) 12%,var(--bg-surface));border-right-color:var(--success)">
-      <div class="reminder__icon">✅</div>
+      <div class="reminder__icon gc0"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></div>
       <div class="reminder__body"><div class="reminder__title">لا توجد تذكيرات حالية</div><div class="reminder__desc">كل التقارير محدّثة — جزاك الله خيرًا.</div></div>
     </div>`;
     return;
@@ -1671,7 +1938,7 @@ App.Dashboard.renderReminders = function () {
     const waText = encodeURIComponent(`تذكير: ${msg}`);
     box.insertAdjacentHTML('beforeend', `
       <div class="reminder">
-        <div class="reminder__icon">⏰</div>
+        <div class="reminder__icon gc1"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg></div>
         <div class="reminder__body">
           <div class="reminder__title">تقرير ${r.type}ي مستحق</div>
           <div class="reminder__desc">${escapeHtml(msg)}</div>
@@ -2122,7 +2389,7 @@ App.Reports.collect = function (studentId, type, from, to) {
 /* ===================== Docx Report Methods ===================== */
 DocxEngine.cell = function (text, opts) {
   opts = opts || {};
-  const { TableCell, Paragraph, AlignmentType } = docx;
+  const { TableCell, Paragraph, AlignmentType, WidthType } = docx;
   // في الفقرات RTL الافتراضي هو اليمين، فلا نحدد محاذاة إلا للتوسيط
   const align = opts.align === 'CENTER' ? AlignmentType.CENTER : undefined;
   const cellOpts = {
@@ -2132,24 +2399,43 @@ DocxEngine.cell = function (text, opts) {
       spacing: { before: 40, after: 40 },
       children: [this.run(text, { bold: opts.bold || false, color: opts.color || '2C2A28', size: opts.size || 18 })]
     })],
-    verticalAlign: 'center'
+    verticalAlign: 'center',
+    margins: { top: 40, bottom: 40, left: 70, right: 70 }
   };
+  if (opts.w) cellOpts.width = { size: opts.w, type: WidthType.DXA };
   if (opts.fill) cellOpts.shading = { fill: opts.fill };
   return new TableCell(cellOpts);
 };
 
 DocxEngine.table = function (headers, rows) {
-  const { Table, TableRow, WidthType } = docx;
+  const { Table, TableRow, WidthType, TableLayoutType, AlignmentType } = docx;
+  const n = headers.length;
+  const w = Math.floor(this.CONTENT_W / n);
+  const widths = headers.map(() => w);
   const headerRow = new TableRow({
     tableHeader: true,
-    children: headers.map(h => this.cell(h, { bold: true, fill: '2D5A4A', color: 'FFFFFF', align: 'CENTER' }))
+    children: headers.map(h => this.cell(h, { bold: true, fill: '2D5A4A', color: 'FFFFFF', align: 'CENTER', w: w }))
   });
   const dataRows = rows.map(function (r) {
     return new TableRow({
-      children: r.map(function (v) { return DocxEngine.cell(v, { align: 'RIGHT' }); })
+      cantSplit: true,
+      children: r.map(function (v) { return DocxEngine.cell(v, { w: w }); })
     });
   });
-  return new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, visuallyRightToLeft: true, rows: [headerRow].concat(dataRows) });
+  /* الجدول بالكامل من اليمين لليسار: العمود الأول عند أقصى اليمين والنص محاذٍ لليمين */
+  return new Table({
+    width: { size: w * n, type: WidthType.DXA },
+    columnWidths: widths,
+    layout: TableLayoutType.FIXED,
+    alignment: AlignmentType.RIGHT,
+    visuallyRightToLeft: true,
+    rows: [headerRow].concat(dataRows)
+  });
+};
+
+DocxEngine.shortDate = function (d) {
+  if (!d) return '—';
+  try { const dt = new Date(d + 'T00:00:00'); if (isNaN(dt)) return d; return dt.toLocaleDateString('ar-EG', { year: 'numeric', month: 'numeric', day: 'numeric' }); } catch { return d; }
 };
 
 DocxEngine.fmtNew = function (l) {
@@ -2187,14 +2473,14 @@ DocxEngine.generateReport = async function (st, lessons, from, to, notes, type, 
   ];
   if (lessons.length) {
     children.push(this.table(
-      ['التاريخ', 'اليوم', 'الحضور', 'الجديد', 'دقة%', 'أخطاء', 'ماضي قريب', 'ماضي متوسط', 'ماضي بعيد', 'التجويد', '⭐'],
+      ['التاريخ', 'اليوم', 'الحضور', 'الجديد', 'دقة%', 'أخطاء', 'ماضي قريب', 'ماضي متوسط', 'ماضي بعيد', 'التجويد', 'التقييم'],
       lessons.map(function (l) {
         return [
-          l.date || '—', l.day || '—', l.attendance || '—', DocxEngine.fmtNew(l),
+          DocxEngine.shortDate(l.date), l.day || '—', l.attendance || '—', DocxEngine.fmtNew(l),
           l.new_accuracy ? l.new_accuracy + '%' : '—', String(l.new_mistakes == null ? '—' : l.new_mistakes),
           l.near_past || '—', l.mid_past || '—', l.far_past || '—',
           l.tajweed_taken === 'نعم' ? (l.tajweed_rule || 'نعم') : '—',
-          l.stars ? '⭐'.repeat(Math.max(0, Math.min(5, parseInt(l.stars, 10) || 0))) : '—'
+          l.stars ? (Math.max(0, Math.min(5, parseInt(l.stars, 10) || 0)) + ' / 5') : '—'
         ];
       })
     ));
@@ -2203,7 +2489,7 @@ DocxEngine.generateReport = async function (st, lessons, from, to, notes, type, 
       const hasNotes = l.notes || l.new_notes || l.near_notes || l.mid_notes || l.far_notes || l.tajweed_notes || (l.has_homework === 'نعم' && l.homework);
       if (hasNotes) {
         children.push(new Paragraph({ bidirectional: true, spacing: { before: 140, after: 60 },
-          children: [DocxEngine.run('📅 ' + formatDateAr(l.date) + ' (' + (l.day || '') + ')', { bold: true, size: 22, color: '2D5A4A' })] }));
+          children: [DocxEngine.run(formatDateAr(l.date) + ' (' + (l.day || '') + ')', { bold: true, size: 22, color: '2D5A4A' })] }));
         if (l.new_notes) children.push(DocxEngine.line('الجديد:', l.new_notes));
         if (l.near_notes) children.push(DocxEngine.line('ماضي قريب:', l.near_notes));
         if (l.mid_notes) children.push(DocxEngine.line('ماضي متوسط:', l.mid_notes));
@@ -2240,7 +2526,7 @@ DocxEngine.generateExport = async function () {
       DB.students.map(function (s, i) {
         return [
           String(i + 1), s.name || '—', String(s.age || '—'), s.gender || '—', s.level || '—',
-          s.guardian || '—', s.phone || '—', s.first_lesson_date || '—',
+          s.guardian || '—', s.phone || '—', DocxEngine.shortDate(s.first_lesson_date),
           String(DB.lessons.filter(function (l) { return l.student_id === s.id; }).length)
         ];
       })
@@ -2254,7 +2540,7 @@ DocxEngine.generateExport = async function () {
       ['التاريخ', 'اليوم', 'الطالب', 'الحضور', 'الجديد', 'دقة%', 'أخطاء'],
       DB.lessons.slice().sort(function (a, b) { return (a.date || '').localeCompare(b.date || ''); }).map(function (l) {
         return [
-          l.date || '—', l.day || '—', sm[l.student_id] || '—', l.attendance || '—',
+          DocxEngine.shortDate(l.date), l.day || '—', sm[l.student_id] || '—', l.attendance || '—',
           DocxEngine.fmtNew(l), l.new_accuracy ? l.new_accuracy + '%' : '—',
           String(l.new_mistakes == null ? '—' : l.new_mistakes)
         ];
@@ -2552,7 +2838,7 @@ App.Preview.shareWhatsApp = function () {
   });
   msg += '\nجزاكم الله خيرًا.';
   if (msg.length > 3500) msg = msg.slice(0, 3400).replace(/\n[^\n]*$/, '') + '\n\n… (التقرير طويل؛ استخدم زر مشاركة الملف لإرساله كاملًا)\nجزاكم الله خيرًا.';
-  window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
+  (function () { const a = document.createElement('a'); a.href = 'https://wa.me/?text=' + encodeURIComponent(rtlMsg(msg)); a.target = '_blank'; a.rel = 'noopener noreferrer'; document.body.appendChild(a); a.click(); a.remove(); })();
   showToast('تم فتح واتساب', 'success');
 };
 
@@ -2588,7 +2874,62 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+/* ===================== Interactions v2 (مبسّطة) ===================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  const pub = $('#view-public');
+
+  /* نزول سلس لقسم الحجز/المعلم، وتركيز على أول حقل في الحجز */
+  const go = (id) => {
+    const t = document.getElementById(id); if (!t) return;
+    t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    if (id === 'register') setTimeout(() => {
+      const f = $('#regForm');
+      if (f) { f.classList.remove('spot'); void f.offsetWidth; f.classList.add('spot'); setTimeout(() => f.classList.remove('spot'), 1900); }
+      if (fine) $('#regName')?.focus({ preventScroll: true });
+    }, reduce ? 0 : 650);
+  };
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('a[href="#register"],a[href="#teacher"]');
+    if (!a) return;
+    e.preventDefault();
+    go(a.getAttribute('href').slice(1));
+  });
+
+  /* زر حجز عائم واحد: يظهر بين الهيرو والنموذج فقط */
+  if (pub && 'IntersectionObserver' in window) {
+    pub.insertAdjacentHTML('beforeend', '<a href="#register" class="btn btn--primary cta-pill" tabindex="-1" aria-hidden="true">احجز حصتك المجانية</a>');
+    const pill = $('.cta-pill', pub), st = { hero: true, reg: false, foot: false };
+    const upd = () => {
+      const on = !st.hero && !st.reg && !st.foot;
+      pill.classList.toggle('show', on); pill.tabIndex = on ? 0 : -1; pill.setAttribute('aria-hidden', on ? 'false' : 'true');
+    };
+    const watch = (sel, key, margin) => { const el = $(sel, pub); if (el) new IntersectionObserver((en) => { st[key] = en[en.length - 1].isIntersecting; upd(); }, { rootMargin: margin }).observe(el); };
+    watch('.hero', 'hero', '0px'); watch('#register', 'reg', '0px 0px -25% 0px'); watch('.footer', 'foot', '0px');
+  }
+});
+
 })();
 </script>
+<script>(function(){
+'use strict';
+var M={'📅':['calendar','gc3'],'📖':['book','gc0'],'📚':['stack','gc1'],'🎓':['cap','gc4'],'📋':['clipboard','gc3'],'📝':['file','gc2'],'👥':['users','gc4'],'🔍':['search','gc3'],'✅':['check','gc0'],'🎯':['target','gc2'],'📂':['folder','gc1'],'✏️':['edit','gc1'],'🗑️':['trash','gc5'],'🔑':['key','gc1'],'📤':['share','gc0'],'✕':['x','gc5'],'🔒':['lock','gc1'],'🌙':['moon','gc3'],'☀️':['sun','gc1'],'🌅':['sunrise','gc1'],'🕒':['clock','gc3']};
+var N={};Object.keys(M).forEach(function(k){N[k.replace(/\uFE0F/g,'')]=M[k];});
+var RE=new RegExp('('+Object.keys(N).join('|')+')\\uFE0F?','g');
+function tile(ch){var m=N[ch],s=document.createElement('span');s.className='gi '+m[1];s.setAttribute('aria-hidden','true');s.innerHTML='<svg class="ic"><use href="#i-'+m[0]+'"/></svg>';return s;}
+function walk(root){
+  var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var p=n.parentNode;if(!p||/^(SCRIPT|STYLE|TEXTAREA|OPTION|TITLE)$/.test(p.nodeName))return NodeFilter.FILTER_REJECT;RE.lastIndex=0;return RE.test(n.data)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;}});
+  var list=[];while(w.nextNode())list.push(w.currentNode);
+  list.forEach(function(n){var t=n.data,f=document.createDocumentFragment(),i=0,m;RE.lastIndex=0;
+    while((m=RE.exec(t))){if(m.index>i)f.appendChild(document.createTextNode(t.slice(i,m.index)));f.appendChild(tile(m[1]));i=RE.lastIndex;}
+    if(i<t.length)f.appendChild(document.createTextNode(t.slice(i)));n.parentNode.replaceChild(f,n);});
+}
+function cleanPh(){document.querySelectorAll('[placeholder]').forEach(function(e){var p=e.getAttribute('placeholder');RE.lastIndex=0;if(RE.test(p)){RE.lastIndex=0;e.setAttribute('placeholder',p.replace(RE,'').trim());}});}
+var q=new Set(),raf=0,cfg={childList:true,subtree:true,characterData:true};
+var obs=new MutationObserver(function(ms){ms.forEach(function(m){if(m.type==='characterData'){if(m.target.parentNode)q.add(m.target.parentNode);}else m.addedNodes.forEach(function(n){var r=n.nodeType===1?n:n.parentNode;if(r)q.add(r);});});if(!raf)raf=requestAnimationFrame(flush);});
+function flush(){raf=0;obs.disconnect();try{q.forEach(function(n){if(n.isConnected)walk(n);});cleanPh();}catch(e){}q.clear();obs.observe(document.body,cfg);}
+try{walk(document.body);cleanPh();}catch(e){}obs.observe(document.body,cfg);
+})();</script>
 </body>
 </html>
