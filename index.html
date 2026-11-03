@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-3e5wDaW8L4yphvbvDTpgzKW3jpQ1xnmbWfUA9Kul9C4=' 'sha256-PcM/gm5VIXO0+r5cBQW3163UbFWrnpj83mKkFzIOjk4=' https://cdn.jsdelivr.net https://unpkg.com 'unsafe-eval'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-3e5wDaW8L4yphvbvDTpgzKW3jpQ1xnmbWfUA9Kul9C4=' 'sha256-zc2owliyu4q4vaqdLn0m5ILanmohwoTA1YGZTmoZKNw=' https://cdn.jsdelivr.net https://unpkg.com 'unsafe-eval'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#2D5A4A">
@@ -295,6 +295,14 @@ input[readonly].form-input{background:var(--bg-subtle);cursor:default;font-weigh
 .js-motion .reveal.in{opacity:1;transform:none}
 .js-motion .feature.reveal.in{transition:transform .2s ease,box-shadow .2s ease,opacity .5s ease}
 @media(prefers-reduced-motion:reduce){.js-motion .reveal{opacity:1;transform:none}.fab,.hero__inner{animation:none!important}}
+
+/* ===== اختيار ساعات التفرغ ===== */
+.time-period{margin-bottom:1rem}
+.time-period__title{font-weight:800;font-size:.9rem;color:var(--p700);margin-bottom:.5rem}
+.time-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:.5rem}
+.time-grid .form-option{display:block}
+.time-grid .form-option span{width:100%;justify-content:center;padding:.55rem .4rem}
+#slotSummary:not(:empty){font-weight:600}
 </style>
 </head>
 <body>
@@ -476,7 +484,7 @@ input[readonly].form-input{background:var(--bg-subtle);cursor:default;font-weigh
         </fieldset>
 
         <fieldset class="form-fieldset">
-          <legend class="form-legend"><span class="form-legend__num">3</span> تاريخ الحجز والأيام المناسبة</legend>
+          <legend class="form-legend"><span class="form-legend__num">3</span> تاريخ الحجز والمواعيد المناسبة</legend>
           <div class="form-group">
             <label class="form-label" for="regDate">تاريخ حجز الحصة المجانية</label>
             <input type="text" id="regDate" class="form-input" readonly required aria-describedby="regDateHint">
@@ -495,6 +503,36 @@ input[readonly].form-input{background:var(--bg-subtle);cursor:default;font-weigh
               <label class="form-option"><input type="checkbox" name="days" value="الجمعة"><span>الجمعة</span></label>
             </div>
             <div class="form-error" id="errDays"></div>
+          </div>
+          <div class="form-group">
+            <span class="form-label" id="timesLabel">الساعات التي تناسبك <span class="req">*</span></span>
+            <p class="form-hint" style="margin-top:0;margin-bottom:.75rem;">اختر ساعة أو أكثر، وتنطبق على كل الأيام التي اخترتها (بتوقيت بلدك).</p>
+            <div id="timesWrap" role="group" aria-labelledby="timesLabel">
+              <div class="time-period"><div class="time-period__title">🌅 صباحًا</div><div class="time-grid">
+                <label class="form-option"><input type="checkbox" name="times" value="8 ص"><span>8 ص</span></label>
+                <label class="form-option"><input type="checkbox" name="times" value="9 ص"><span>9 ص</span></label>
+                <label class="form-option"><input type="checkbox" name="times" value="10 ص"><span>10 ص</span></label>
+                <label class="form-option"><input type="checkbox" name="times" value="11 ص"><span>11 ص</span></label>
+              </div></div>
+              <div class="time-period"><div class="time-period__title">☀️ ظهرًا وعصرًا</div><div class="time-grid">
+                <label class="form-option"><input type="checkbox" name="times" value="12 ظهرًا"><span>12 ظهرًا</span></label>
+                <label class="form-option"><input type="checkbox" name="times" value="1 م"><span>1 م</span></label>
+                <label class="form-option"><input type="checkbox" name="times" value="2 م"><span>2 م</span></label>
+                <label class="form-option"><input type="checkbox" name="times" value="3 م"><span>3 م</span></label>
+                <label class="form-option"><input type="checkbox" name="times" value="4 م"><span>4 م</span></label>
+                <label class="form-option"><input type="checkbox" name="times" value="5 م"><span>5 م</span></label>
+              </div></div>
+              <div class="time-period"><div class="time-period__title">🌙 مساءً</div><div class="time-grid">
+                <label class="form-option"><input type="checkbox" name="times" value="6 م"><span>6 م</span></label>
+                <label class="form-option"><input type="checkbox" name="times" value="7 م"><span>7 م</span></label>
+                <label class="form-option"><input type="checkbox" name="times" value="8 م"><span>8 م</span></label>
+                <label class="form-option"><input type="checkbox" name="times" value="9 م"><span>9 م</span></label>
+                <label class="form-option"><input type="checkbox" name="times" value="10 م"><span>10 م</span></label>
+                <label class="form-option"><input type="checkbox" name="times" value="11 م"><span>11 م</span></label>
+              </div></div>
+            </div>
+            <div class="form-error" id="errTimes"></div>
+            <p id="slotSummary" class="form-hint status-box" aria-live="polite" style="margin-top:.75rem;"></p>
           </div>
         </fieldset>
 
@@ -688,7 +726,17 @@ const PublicForm = {
     } else {
       errDays.classList.remove('visible');
     }
-    return v1 && v2 && v3 && v4 && v5 && v6 && v7;
+    const times = $$('input[name="times"]:checked');
+    const errTimes = $('#errTimes');
+    let v8 = true;
+    if (!times.length) {
+      errTimes.textContent = 'اختر ساعة واحدة على الأقل';
+      errTimes.classList.add('visible');
+      v8 = false;
+    } else {
+      errTimes.classList.remove('visible');
+    }
+    return v1 && v2 && v3 && v4 && v5 && v6 && v7 && v8;
   },
   getData() {
     const gender = $('input[name="gender"]:checked');
@@ -703,7 +751,8 @@ const PublicForm = {
       gender: gender ? gender.value : '—',
       juz: $('#regJuz').value,
       level: level ? level.value : '—',
-      days
+      days,
+      times: $$('input[name="times"]:checked').map(c => c.value)
     };
   }
 };
@@ -904,9 +953,10 @@ const DocxEngine = {
         ['رقم ولي الأمر:', d.guardianPhone], ['النوع:', d.gender] ] },
       { title: 'مستوى الحفظ', rows: [
         ['عدد الأجزاء المحفوظة:', d.juz], ['مستوى القراءة:', d.level] ] },
-      { title: 'تاريخ الحجز والأيام المناسبة', rows: [
+      { title: 'تاريخ الحجز والمواعيد المناسبة', rows: [
         ['تاريخ حجز الحصة المجانية:', d.date ? formatDateAr(d.date) : '—'],
-        ['الأيام المفضلة:', d.days.length ? d.days.join('، ') : '—'] ] }
+        ['الأيام المفضلة:', d.days.length ? d.days.join('، ') : '—'],
+        ['الساعات المناسبة:', d.times && d.times.length ? d.times.join('، ') : '—'] ] }
     ];
   },
   registrationDoc(d) {
@@ -1050,6 +1100,8 @@ const buildRegMsg = (d) => (
       `• تاريخ اليوم الذي تم فيه الحجز: ${formatDateAr(d.date)}\n\n` +
       `*الأيام المفضلة:*\n` +
       `• ${d.days.join('، ')}\n\n` +
+      `*الساعات المناسبة:*\n` +
+      `• ${d.times.join('، ')}\n\n` +
       `جزاكم الله خيرًا.`
 );
 
@@ -1079,6 +1131,19 @@ document.addEventListener('DOMContentLoaded', async () => {
   $('#daysGrid')?.addEventListener('change', () => {
     if ($$('input[name="days"]:checked').length) $('#errDays').classList.remove('visible');
   });
+  const slotSummary = () => {
+    const el = $('#slotSummary'); if (!el) return;
+    const d = $$('input[name="days"]:checked').map(c => c.value);
+    const t = $$('input[name="times"]:checked').map(c => c.value);
+    el.textContent = (d.length || t.length)
+      ? '📅 الأيام: ' + (d.length ? d.join('، ') : '—') + ' | 🕒 الساعات: ' + (t.length ? t.join('، ') : '—')
+      : '';
+  };
+  $('#timesWrap')?.addEventListener('change', () => {
+    if ($$('input[name="times"]:checked').length) $('#errTimes').classList.remove('visible');
+  });
+  $('#daysGrid')?.addEventListener('change', slotSummary);
+  $('#timesWrap')?.addEventListener('change', slotSummary);
 
 
   /* ---- حركة وتفاعل الصفحة ---- */
@@ -1134,7 +1199,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const readyDoc = () => (_built && _builtKey === curKey()) ? _built : null;
   const warmUp = debounce(() => {
     const d = PublicForm.getData();
-    if (d.name && d.age && d.phone && d.guardianPhone && d.juz && d.days.length) prepareDoc();
+    if (d.name && d.age && d.phone && d.guardianPhone && d.juz && d.days.length && d.times.length) prepareDoc();
   }, 600);
   $('#regForm')?.addEventListener('input', warmUp);
   $('#regForm')?.addEventListener('change', warmUp);
